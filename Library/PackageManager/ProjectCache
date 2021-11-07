@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637714727360436888
+      ticks: 637719178343713014
     m_Hash: 1482879244
   m_LockFileStatus:
     m_FilePath: C:/Users/gyros/Documents/GitHub/MOBA-Unity-game/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637714727360436888
+      ticks: 637719178343713014
     m_Hash: 3734136228
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
