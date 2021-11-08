@@ -1,6 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
+<<<<<<< Updated upstream
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.UI", "UnityEngine.UI.csproj", "{7A9C599F-9010-758E-3B2E-FA53B80D0CC6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonUnityNetworking.Utilities", "PhotonUnityNetworking.Utilities.csproj", "{3A582332-E0E6-9130-ED8C-B7A01774BBF1}"
@@ -74,6 +75,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.Player.csproj", "{F834F055-C134-44E5-5649-4B2C9F1223BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonRealtime", "PhotonRealtime.Player.csproj", "{1001FABA-0748-F220-DA4E-2D1425D467DD}"
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{E87A7992-2449-8767-4EE8-C014671F1875}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{F131CD44-C3B1-FDE0-1DBC-BB5F60742189}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{2FDD5E3B-15F6-5DA2-7C5D-DAEE46E4215A}"
+>>>>>>> Stashed changes
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +89,7 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<<<<<<< Updated upstream
 		{7A9C599F-9010-758E-3B2E-FA53B80D0CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7A9C599F-9010-758E-3B2E-FA53B80D0CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A9C599F-9010-758E-3B2E-FA53B80D0CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -89,10 +98,13 @@ Global
 		{3A582332-E0E6-9130-ED8C-B7A01774BBF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A582332-E0E6-9130-ED8C-B7A01774BBF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A582332-E0E6-9130-ED8C-B7A01774BBF1}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+>>>>>>> Stashed changes
 		{E87A7992-2449-8767-4EE8-C014671F1875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E87A7992-2449-8767-4EE8-C014671F1875}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E87A7992-2449-8767-4EE8-C014671F1875}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E87A7992-2449-8767-4EE8-C014671F1875}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< Updated upstream
 		{51F8E5A7-B6DB-B6F1-D349-0CE8A19132A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{51F8E5A7-B6DB-B6F1-D349-0CE8A19132A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51F8E5A7-B6DB-B6F1-D349-0CE8A19132A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -117,10 +129,13 @@ Global
 		{7638D43F-0692-60B0-9861-39400C634489}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7638D43F-0692-60B0-9861-39400C634489}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7638D43F-0692-60B0-9861-39400C634489}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+>>>>>>> Stashed changes
 		{F131CD44-C3B1-FDE0-1DBC-BB5F60742189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F131CD44-C3B1-FDE0-1DBC-BB5F60742189}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F131CD44-C3B1-FDE0-1DBC-BB5F60742189}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F131CD44-C3B1-FDE0-1DBC-BB5F60742189}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< Updated upstream
 		{37860896-DD3A-25DE-E84A-6F4E47F4C1B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{37860896-DD3A-25DE-E84A-6F4E47F4C1B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37860896-DD3A-25DE-E84A-6F4E47F4C1B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -229,6 +244,12 @@ Global
 		{1001FABA-0748-F220-DA4E-2D1425D467DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1001FABA-0748-F220-DA4E-2D1425D467DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1001FABA-0748-F220-DA4E-2D1425D467DD}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{2FDD5E3B-15F6-5DA2-7C5D-DAEE46E4215A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FDD5E3B-15F6-5DA2-7C5D-DAEE46E4215A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FDD5E3B-15F6-5DA2-7C5D-DAEE46E4215A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FDD5E3B-15F6-5DA2-7C5D-DAEE46E4215A}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> Stashed changes
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
