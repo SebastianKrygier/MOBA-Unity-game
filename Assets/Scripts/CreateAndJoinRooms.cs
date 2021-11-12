@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 {
-    public InputField creatInput;
+    public InputField createInput;
     public InputField joinInput;
 
     public void CreateRoom()
     {
-        PhotonNetwork.CreateRoom(creatInput.text);
+        PhotonNetwork.CreateRoom(createInput.text);
     }
     public void JoinRoom()
     {
