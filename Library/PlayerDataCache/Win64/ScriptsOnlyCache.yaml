@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - ConnectToServer
     - CreateAndJoinRooms
+    - DelayStartController
     - MainGame
     - PlayerMove
     - Spawn
@@ -48,6 +49,61 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
+    Assets/Scenes/DelayStartWaitingRoom.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1458}
+    - Class: 114
+      Script: {instanceID: 1460}
+    - Class: 114
+      Script: {instanceID: 2436}
+    - Class: 114
+      Script: {instanceID: 2558}
+    - Class: 114
+      Script: {instanceID: 2736}
+    - Class: 114
+      Script: {instanceID: 2940}
+    - Class: 114
+      Script: {instanceID: 2948}
+    - Class: 114
+      Script: {instanceID: 3038}
+    - Class: 114
+      Script: {instanceID: 20660}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/loading.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -273,6 +329,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4416}
     - Class: 114
       Script: {instanceID: 4674}
+    - Class: 114
+      Script: {instanceID: 19972}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -1646,9 +1704,16 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PhotonPlayer
+  - hash:
+      serializedVersion: 2
+      Hash: bbc094f14e3a1dcbc03831423f07d1cb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DelayStartController
   platform: 19
   scenePathNames:
   - Assets/Scenes/loading.unity
   - Assets/Scenes/lobby.unity
+  - Assets/Scenes/DelayStartWaitingRoom.unity
   - Assets/Scenes/project.unity
-  playerPath: D:/UnityProjects/MOBA-Unity-game/MOBA.exe
+  playerPath: C:/Users/gyros/Documents/GitHub/MOBA-Unity-game/MOBA.exe
