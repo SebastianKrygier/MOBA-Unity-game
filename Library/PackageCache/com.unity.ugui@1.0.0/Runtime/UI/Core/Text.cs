@@ -782,11 +782,6 @@ namespace UnityEngine.UI
             base.OnValidate();
         }
 
-        public static implicit operator Text(float v)
-        {
-            throw new NotImplementedException();
-        }
-
 #endif // if UNITY_EDITOR
     }
 }
