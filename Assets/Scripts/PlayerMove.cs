@@ -34,8 +34,18 @@ public class PlayerMove : MonoBehaviourPun
                 }
             }
         //}
+
+        if(agent.velocity != Vector3.zero)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else if(agent.velocity == Vector3.zero)
+        {
+            animator.SetBool("isWalking", false);
+        }
     }
    
 
 
 }
+
