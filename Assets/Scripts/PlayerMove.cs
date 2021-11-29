@@ -20,8 +20,6 @@ public class PlayerMove : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-
-        //if (photonView.IsMine) {
             if (Input.GetMouseButtonDown(1))
             {
                 var velocity = Vector3.forward * 2;
@@ -33,7 +31,6 @@ public class PlayerMove : MonoBehaviourPun
                     transform.Translate(velocity * Time.deltaTime);
                 }
             }
-        //}
 
         if(agent.velocity != Vector3.zero)
         {
