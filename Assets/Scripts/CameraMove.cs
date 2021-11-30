@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
-public class CameraMove : MonoBehaviour
+public class CameraMove : MonoBehaviourPun
 {
     public float speed = 25;
     public float size = 10;
