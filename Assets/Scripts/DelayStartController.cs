@@ -37,7 +37,7 @@ public class DelayStartController : MonoBehaviourPunCallbacks
     private float fullGameTimer;
 
     [SerializeField]
-    private float maxWaitTime=1; //30
+    private float maxWaitTime; 
     [SerializeField]
     private float maxFullGameWaitTime;
 

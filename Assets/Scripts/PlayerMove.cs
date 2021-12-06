@@ -11,6 +11,8 @@ public class PlayerMove : MonoBehaviourPun
     public NavMeshAgent agent;
     Animator animator;
 
+    public LayerMask WhatCanBeClicked;
+
     public float rotateVelocity;
     public float rotateSpeedMovement;
 
@@ -24,6 +26,7 @@ public class PlayerMove : MonoBehaviourPun
         heroCombatScript = GetComponent<HeroCombat>();
     }
 
+    [System.Obsolete]
     void Update()
     {
         //COMBAT
@@ -40,16 +43,19 @@ public class PlayerMove : MonoBehaviourPun
         }
 
         //MOVING
+        RaycastHit hit;
+        Vector3 dest=Vector3.zero;
+        bool movement=false;
+
 
         if (Input.GetMouseButtonDown(1))
         {
-            RaycastHit hit;
-
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity))
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, WhatCanBeClicked))
             {
 
                 if (hit.collider.tag == "Floor")
                 {
+                    agent.Resume();
                     agent.SetDestination(hit.point);
 
                     Quaternion rotationToLookAt = Quaternion.LookRotation(hit.transform.position - transform.position);
@@ -78,10 +84,19 @@ public class PlayerMove : MonoBehaviourPun
         {
             animator.SetBool("isWalking", true);
         }
-        else if(agent.velocity == Vector3.zero)
-        {
-            animator.SetBool("isWalking", false);
-        }
+
+        if(agent.remainingDistance<15)
+            {
+                agent.Stop();
+               // agent.ResetPath();
+
+                animator.SetBool("isWalking", false);
+            }
+        
+            
+        
+        
+        
     }
    
 

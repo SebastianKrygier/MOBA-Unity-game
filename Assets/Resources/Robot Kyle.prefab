@@ -1184,9 +1184,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f56e779e12792489f402f1d82ad670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  rotateVelocity: 0
-  rotateSpeedMovement: 0.075
+  agent: {fileID: 1125480223834017911}
+  WhatCanBeClicked:
+    serializedVersion: 2
+    m_Bits: 64
+  rotateVelocity: 30
+  rotateSpeedMovement: 30
 --- !u!195 &1125480223834017911
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1224,7 +1227,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 3
+  Synchronization: 2
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
@@ -1246,8 +1249,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
+  m_SynchronizeScale: 1
+  m_UseLocal: 0
 --- !u!114 &4648199790356297811
 MonoBehaviour:
   m_ObjectHideFlags: 0
