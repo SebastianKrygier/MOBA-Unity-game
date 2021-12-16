@@ -333,6 +333,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2954}
     - Class: 114
+      Script: {instanceID: 2956}
+    - Class: 114
       Script: {instanceID: 3050}
     - Class: 114
       Script: {instanceID: 4424}
@@ -1743,4 +1745,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/lobby.unity
   - Assets/Scenes/DelayStartWaitingRoom.unity
   - Assets/Scenes/project.unity
-  playerPath: C:/Users/twoloszy/Documents/GitHub/MOBA-Unity-game/MOBA.exe
+  playerPath: C:/Users/Tomek/Documents/GitHub/MOBA-Unity-game/MOBA.exe

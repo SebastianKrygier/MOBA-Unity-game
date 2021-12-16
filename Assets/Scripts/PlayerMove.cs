@@ -8,6 +8,9 @@ using UnityEngine.Networking;
 public class PlayerMove : MonoBehaviourPun
 {
 
+
+    private bool clickFlag;
+
     public NavMeshAgent agent;
     Animator animator;
 
@@ -48,7 +51,7 @@ public class PlayerMove : MonoBehaviourPun
         bool movement=false;
 
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) || clickFlag)
         {
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, WhatCanBeClicked))
             {
@@ -58,10 +61,11 @@ public class PlayerMove : MonoBehaviourPun
                     agent.Resume();
                     agent.SetDestination(hit.point);
 
-                    Quaternion rotationToLookAt = Quaternion.LookRotation(hit.transform.position - transform.position);
-                    float rotationY = Mathf.SmoothDampAngle(transform.eulerAngles.y, rotationToLookAt.eulerAngles.y, ref rotateVelocity, rotateSpeedMovement * (Time.deltaTime * 5));
+                    //Quaternion rotationToLookAt = Quaternion.LookRotation(hit.transform.position - transform.position);
+                    //float rotationY = Mathf.SmoothDampAngle(transform.eulerAngles.y, rotationToLookAt.eulerAngles.y, ref rotateVelocity, rotateSpeedMovement * (Time.deltaTime * 5));
 
-                    transform.eulerAngles = new Vector3(0, rotationY, 0);
+                    //transform.eulerAngles = new Vector3(0, rotationY, 0);
+
                 }
                 
             }
@@ -76,6 +80,15 @@ public class PlayerMove : MonoBehaviourPun
                     transform.Translate(velocity * Time.deltaTime);
                 }
                 */
+            if(clickFlag)
+            {
+                clickFlag=false;
+                
+            }
+            else
+            {
+                clickFlag=true;
+            }
         }
 
         //ANIMATIONS
