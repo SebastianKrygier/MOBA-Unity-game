@@ -14,6 +14,8 @@ public class PlayerMove : MonoBehaviourPun
     public NavMeshAgent agent;
     Animator animator;
 
+    public PhotonView pv;
+
     public LayerMask WhatCanBeClicked;
 
     public float rotateVelocity;
@@ -23,6 +25,7 @@ public class PlayerMove : MonoBehaviourPun
 
     void Start()
     {
+        pv=GetComponent<PhotonView>();
         agent = GetComponent<NavMeshAgent> ();
         animator = GetComponent<Animator>();
 
@@ -48,27 +51,27 @@ public class PlayerMove : MonoBehaviourPun
         //MOVING
         RaycastHit hit;
         Vector3 dest=Vector3.zero;
-        bool movement=false;
 
-
-        if (Input.GetMouseButtonDown(1) || clickFlag)
-        {
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, WhatCanBeClicked))
+        if(pv.IsMine){
+            if (Input.GetMouseButtonDown(1) || clickFlag)
             {
-
-                if (hit.collider.tag == "Floor")
+                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, WhatCanBeClicked))
                 {
-                    agent.Resume();
-                    agent.SetDestination(hit.point);
 
-                    //Quaternion rotationToLookAt = Quaternion.LookRotation(hit.transform.position - transform.position);
-                    //float rotationY = Mathf.SmoothDampAngle(transform.eulerAngles.y, rotationToLookAt.eulerAngles.y, ref rotateVelocity, rotateSpeedMovement * (Time.deltaTime * 5));
+                    if (hit.collider.tag == "Floor")
+                    {
+                        
+                            agent.Resume();
+                            agent.SetDestination(hit.point);
+                        
+                        //Quaternion rotationToLookAt = Quaternion.LookRotation(hit.transform.position - transform.position);
+                        //float rotationY = Mathf.SmoothDampAngle(transform.eulerAngles.y, rotationToLookAt.eulerAngles.y, ref rotateVelocity, rotateSpeedMovement * (Time.deltaTime * 5));
 
-                    //transform.eulerAngles = new Vector3(0, rotationY, 0);
+                        //transform.eulerAngles = new Vector3(0, rotationY, 0);
 
+                    }
+                    
                 }
-                
-            }
 
                 /*
                 var velocity = Vector3.forward * 2;
@@ -79,15 +82,16 @@ public class PlayerMove : MonoBehaviourPun
                     agent.SetDestination(hit.point);
                     transform.Translate(velocity * Time.deltaTime);
                 }
-                */
-            if(clickFlag)
-            {
-                clickFlag=false;
-                
-            }
-            else
-            {
-                clickFlag=true;
+                    */
+                if(clickFlag)
+                {
+                    clickFlag=false;
+                    
+                }
+                else
+                {
+                    clickFlag=true;
+                }
             }
         }
 

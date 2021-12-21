@@ -8,14 +8,30 @@ public class Spawn : MonoBehaviour
     int PlayersNumber=PhotonNetwork.PlayerList.Length;
     public GameObject SpawnBrown;
     public GameObject SpawnGrey;
+    public GameObject SpawnBrownMinion;
+    public GameObject SpawnGreyMinion;
     public GameObject player=null;
 
+    List<GameObject> listOfBrownMinions;
+    List<GameObject> listOfGreyMinions;
+
+
+    [SerializeField]
+    private float waitTimeForMinion;
+
+    private float sinceMinionArrived=0.0f;
+
+    [SerializeField]
+    private float spawnInterval;
+    
+    private float spawnDelay=0.0f;
     public GameObject Camera;
 
     public Vector3 offset;
     
     [SerializeField] private GameObject prefab;
-    
+    [SerializeField] private GameObject MinionGreyPrefab;
+    [SerializeField] private GameObject MinionBrownPrefab;
     public float speed = 25;
     public float size = 10;
 
@@ -31,12 +47,30 @@ public class Spawn : MonoBehaviour
         {
             player = PhotonNetwork.Instantiate(prefab.name, SpawnBrown.transform.position, SpawnBrown.transform.rotation);
         }
-        else
+        else if(PhotonNetwork.NickName == "2")
+        {
+            player = PhotonNetwork.Instantiate(prefab.name, SpawnGrey.transform.position, SpawnGrey.transform.rotation);
+        }
+        else if(PhotonNetwork.NickName == "3")
+        {
+            player = PhotonNetwork.Instantiate(prefab.name, SpawnBrown.transform.position, SpawnBrown.transform.rotation);
+        }
+        else if(PhotonNetwork.NickName == "4")
+        {
+            player = PhotonNetwork.Instantiate(prefab.name, SpawnGrey.transform.position, SpawnGrey.transform.rotation);
+        }
+        else if(PhotonNetwork.NickName == "5")
+        {
+            player = PhotonNetwork.Instantiate(prefab.name, SpawnBrown.transform.position, SpawnBrown.transform.rotation);
+        }
+        else if(PhotonNetwork.NickName == "6")
         {
             player = PhotonNetwork.Instantiate(prefab.name, SpawnGrey.transform.position, SpawnGrey.transform.rotation);
         }
         player.GetComponent<PlayerMove>().enabled = true;
         Camera.transform.position=player.transform.position+offset;
+        listOfGreyMinions=new List<GameObject>();
+        listOfBrownMinions=new List<GameObject>();
 
         
     }
@@ -70,6 +104,31 @@ public class Spawn : MonoBehaviour
 
         Camera.transform.position = position;
         }
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            return;
+        }
+        if(waitTimeForMinion<sinceMinionArrived)
+        {
+            for(int i=0; i<6; i++)
+            {
+                listOfBrownMinions.Add((GameObject)PhotonNetwork.Instantiate(MinionBrownPrefab.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation));
+                //PhotonNetwork.Instantiate(MinionBrownPrefab, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation);
+                listOfGreyMinions.Add((GameObject)PhotonNetwork.Instantiate(MinionGreyPrefab.name, SpawnGreyMinion.transform.position, SpawnGreyMinion.transform.rotation));
+                //PhotonNetwork.Instantiate(MinionGreyPrefab, SpawnGreyMinion.transform.position, SpawnGreyMinion.transform.rotation);
+                while(spawnInterval>spawnDelay)
+                {
+                    spawnDelay+=Time.deltaTime;
+                }
+                spawnDelay=0.0f;
+            }
+            sinceMinionArrived=0.0f;
+        }
+        else
+        {
+            sinceMinionArrived+=Time.deltaTime;
+        }
+
 
     }
     void Update()

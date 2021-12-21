@@ -78,15 +78,15 @@ public class CreateAndJoinRooms :MonoBehaviourPunCallbacks, IInRoomCallbacks
         currentScene = scene.buildIndex;
         if(currentScene == multiplayerScene)
         {
-            createPlayer();
+            //createPlayer();
         }
     }
 
-    public void createPlayer()
-    {
-        Vector3 position= new Vector3(760.323792F, 32.5F, 204.807297F);
-        Quaternion rotation= new Quaternion(0F,0F,0F,1F);
+   // public void createPlayer()
+    //{
+     //   Vector3 position= new Vector3(760.323792F, 32.5F, 204.807297F);
+    //    Quaternion rotation= new Quaternion(0F,0F,0F,1F);
         //PhotonNetwork.Instantiate("Robot Kyle", position , rotation ,0);
-    }
+   // }
 
 }

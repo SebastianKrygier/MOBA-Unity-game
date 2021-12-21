@@ -8,6 +8,7 @@ ScriptsOnlyBuild:
     - HeroCombat
     - InputTargeting
     - MainGame
+    - MinionBehaviour
     - PlayerMove
     - Spawn
     PhotonUnityNetworking.Demos.dll:
@@ -33,8 +34,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -198,6 +201,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4774}
     - Class: 114
       Script: {instanceID: 4876}
+    - Class: 114
+      Script: {instanceID: 21426}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -340,6 +345,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4424}
     - Class: 114
       Script: {instanceID: 4682}
+    - Class: 114
+      Script: {instanceID: 21426}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -607,7 +614,7 @@ ScriptsOnlyBuild:
     className: IngameControlPanel
   - hash:
       serializedVersion: 2
-      Hash: 0c53f0bf9156cf32deffaeb12ea0a24e
+      Hash: 0756f70d51f9bf0c3bcfaec0787463b0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMove
@@ -1633,7 +1640,7 @@ ScriptsOnlyBuild:
     className: ThirdPersonUserControl
   - hash:
       serializedVersion: 2
-      Hash: 9fc26c07d8f6721c6ad5559b8901090a
+      Hash: 8c8f83c2a832d761b495af22369be278
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Spawn
@@ -1739,6 +1746,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PhotonPlayer
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MinionBehaviour
   platform: 19
   scenePathNames:
   - Assets/Scenes/loading.unity
