@@ -64,6 +64,7 @@
      <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\IgnoreUiRaycastWhenInactive.cs" />
      <Compile Include="Assets\Scripts\CreateAndJoinRooms.cs" />
      <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
+     <Compile Include="Assets\MinionBehaviour.cs" />
      <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\FriendItem.cs" />
      <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatGui.cs" />
      <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextToggleIsOnTransition.cs" />
