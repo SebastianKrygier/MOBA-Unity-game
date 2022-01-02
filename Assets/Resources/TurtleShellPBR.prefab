@@ -784,9 +784,12 @@ GameObject:
   - component: {fileID: -4233650444997934066}
   - component: {fileID: -3675343286968067982}
   - component: {fileID: 5556076256646973714}
+  - component: {fileID: 7130918534847143454}
+  - component: {fileID: 7028985062054778273}
+  - component: {fileID: 2103479290487528300}
   m_Layer: 0
   m_Name: TurtleShellPBR
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -800,7 +803,7 @@ Transform:
   m_GameObject: {fileID: 1774625739149480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 4968209632078062}
   - {fileID: 4148951095833812}
@@ -921,6 +924,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50d42e8de3c4eb4ca17f249ae8798a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 0}
+  GreyLineDst: {fileID: 0}
+  BrownLineDst: {fileID: 0}
+  GreyBase: {fileID: 0}
+  BrownBase: {fileID: 0}
+  LineIndicator: 0
+--- !u!114 &7130918534847143454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774625739149480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d745da745b521fd42a4673328f0a3550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  health: 0
+  attackDamage: 0
+  attackSpeed: 0
+  attackTime: 0
+--- !u!114 &7028985062054778273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774625739149480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a78babd4eac7b74084c2b4af2062afe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyType: 0
+--- !u!65 &2103479290487528300
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774625739149480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.15, y: 1, z: 1.55}
+  m_Center: {x: 0, y: 0.57, z: 0}
 --- !u!1 &1822049695589022
 GameObject:
   m_ObjectHideFlags: 0

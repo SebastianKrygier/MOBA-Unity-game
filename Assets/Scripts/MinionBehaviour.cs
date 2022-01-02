@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using PhotonNetwork;
 using Photon.Pun;
+using UnityEngine.AI;
 
 public class MinionBehaviour : MonoBehaviour
 {
-    public NavMeshAgent agent;
+    public UnityEngine.AI.NavMeshAgent agent;
     public GameObject GreyLineDst;
     public GameObject BrownLineDst;
     public GameObject GreyBase;
     public GameObject BrownBase;
 
-    [SerializedField]
+    [SerializeField]
     private int LineIndicator;
 
     private bool firstDestinationIsSet=false;
@@ -21,7 +21,7 @@ public class MinionBehaviour : MonoBehaviour
 
     public void OnPhotonInstantiate(PhotonMessageInfo info)
     {
-        LineIndicator = info.photonView.InstantiationData;
+        //LineIndicator = info.photonView.InstantiationData;
         
     }
 

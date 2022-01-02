@@ -25,8 +25,8 @@ public class PlayerMove : MonoBehaviourPun
 
     void Start()
     {
-        pv=GetComponent<PhotonView>();
-        agent = GetComponent<NavMeshAgent> ();
+        pv = GetComponent<PhotonView>();
+        agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
 
         heroCombatScript = GetComponent<HeroCombat>();
@@ -50,9 +50,10 @@ public class PlayerMove : MonoBehaviourPun
 
         //MOVING
         RaycastHit hit;
-        Vector3 dest=Vector3.zero;
+        Vector3 dest = Vector3.zero;
 
-        if(pv.IsMine){
+        if (pv.IsMine)
+        {
             if (Input.GetMouseButtonDown(1) || clickFlag)
             {
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, WhatCanBeClicked))
@@ -60,17 +61,17 @@ public class PlayerMove : MonoBehaviourPun
 
                     if (hit.collider.tag == "Floor")
                     {
-                        
-                            agent.Resume();
-                            agent.SetDestination(hit.point);
-                        
+                        heroCombatScript.targetedEnemy = null;
+                        agent.Resume();
+                        agent.SetDestination(hit.point);
+
                         //Quaternion rotationToLookAt = Quaternion.LookRotation(hit.transform.position - transform.position);
                         //float rotationY = Mathf.SmoothDampAngle(transform.eulerAngles.y, rotationToLookAt.eulerAngles.y, ref rotateVelocity, rotateSpeedMovement * (Time.deltaTime * 5));
 
                         //transform.eulerAngles = new Vector3(0, rotationY, 0);
 
                     }
-                    
+
                 }
 
                 /*
@@ -83,39 +84,39 @@ public class PlayerMove : MonoBehaviourPun
                     transform.Translate(velocity * Time.deltaTime);
                 }
                     */
-                if(clickFlag)
+                if (clickFlag)
                 {
-                    clickFlag=false;
-                    
+                    clickFlag = false;
+
                 }
                 else
                 {
-                    clickFlag=true;
+                    clickFlag = true;
                 }
             }
         }
 
         //ANIMATIONS
 
-        if(agent.velocity != Vector3.zero)
+        if (agent.velocity != Vector3.zero)
         {
             animator.SetBool("isWalking", true);
         }
 
-        if(agent.remainingDistance<15)
-            {
-                agent.Stop();
-               // agent.ResetPath();
+        if (agent.remainingDistance < 15)
+        {
+            agent.Stop();
+            // agent.ResetPath();
 
-                animator.SetBool("isWalking", false);
-            }
-        
-            
-        
-        
-        
+            animator.SetBool("isWalking", false);
+        }
+
+
+
+
+
     }
-   
+
 
 
 }

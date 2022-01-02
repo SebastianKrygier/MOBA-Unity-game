@@ -11,7 +11,7 @@ public class Spawn : MonoBehaviour
     public GameObject SpawnBrownMinion;
     public GameObject SpawnGreyMinion;
     public GameObject player=null;
-    [SerializedField]
+    [SerializeField] 
     private int LineIndicator;
 
     List<GameObject> listOfBrownMinions;
@@ -114,9 +114,9 @@ public class Spawn : MonoBehaviour
         {
             for(int i=0; i<6; i++)
             {
-                listOfBrownMinions.Add((GameObject)PhotonNetwork.Instantiate(MinionBrownPrefab.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,LineIndicator));
+                //listOfBrownMinions.Add((GameObject)PhotonNetwork.Instantiate(MinionBrownPrefab.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,LineIndicator));
 
-                listOfGreyMinions.Add((GameObject)PhotonNetwork.Instantiate(MinionGreyPrefab.name, SpawnGreyMinion.transform.position, SpawnGreyMinion.transform.rotation,LineIndicator));
+                //listOfGreyMinions.Add((GameObject)PhotonNetwork.Instantiate(MinionGreyPrefab.name, SpawnGreyMinion.transform.position, SpawnGreyMinion.transform.rotation,LineIndicator));
                 LineIndicator++;
                 while(spawnInterval>spawnDelay)
                 {

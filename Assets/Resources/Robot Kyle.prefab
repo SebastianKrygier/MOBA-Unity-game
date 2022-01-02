@@ -1131,6 +1131,8 @@ GameObject:
   - component: {fileID: 8873528521177391718}
   - component: {fileID: 4648199790356297811}
   - component: {fileID: 4934233738354181043}
+  - component: {fileID: -1908006510226440123}
+  - component: {fileID: -5310466838246668761}
   m_Layer: 0
   m_Name: Robot Kyle
   m_TagString: Player
@@ -1202,7 +1204,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.55
+  m_Speed: 355
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 1200
@@ -1273,6 +1275,7 @@ MonoBehaviour:
   basicAtkIdle: 0
   isHeroAlive: 0
   performMeleeAttack: 1
+  distance: 0
 --- !u!114 &4934233738354181043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1300,12 +1303,46 @@ MonoBehaviour:
   - Type: 9
     SynchronizeType: 0
     Name: Jump
-  - Type: 4
-    SynchronizeType: 2
-    Name: isWalking
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0
+--- !u!114 &-1908006510226440123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125480222766852840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d745da745b521fd42a4673328f0a3550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 100
+  attackDamage: 10
+  attackSpeed: 1
+  attackTime: 1
+--- !u!114 &-5310466838246668761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125480222766852840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce3565db248aff343a88d55f693e23da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroAttackType: 0
+  targetedEnemy: {fileID: 0}
+  attackRange: 100
+  rotateSpeedForAttack: 0
+  basicAtkIdle: 0
+  isHeroAlive: 0
+  performMeleeAttack: 1
+  distance: 0
 --- !u!1 &1125480222766852842
 GameObject:
   m_ObjectHideFlags: 0
