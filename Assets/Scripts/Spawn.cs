@@ -14,6 +14,13 @@ public class Spawn : MonoBehaviour
      [SerializeField]
     private object[] LineIndicator= new object[]{0};
 
+    [SerializeField]
+    private object[] BrownTeamIndicator= new object[]{0};
+    [SerializeField]
+    private object[] GreyTeamIndicator= new object[]{1};
+
+
+
     List<GameObject> listOfBrownMinions;
     List<GameObject> listOfGreyMinions;
 
@@ -31,7 +38,8 @@ public class Spawn : MonoBehaviour
 
     public Vector3 offset;
     
-    [SerializeField] private GameObject prefab;
+    [SerializeField] private GameObject prefab1;
+    [SerializeField] private GameObject prefab2;
     [SerializeField] private GameObject MinionGreyPrefab;
     [SerializeField] private GameObject MinionBrownPrefab;
     public float speed = 25;
@@ -41,33 +49,34 @@ public class Spawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         
         //GameObject player = PhotonNetwork.Instantiate("Robot Kyle", SpawnBrown[0].transform.position, SpawnBrown[0].transform.rotation,0);
         //player.GetComponent<PlayerMove>().enabled = true;
         //player.GetComponent<Animator>().enabled = true;
         if (PhotonNetwork.NickName == "1")
         {
-            player = PhotonNetwork.Instantiate(prefab.name, SpawnBrown.transform.position, SpawnBrown.transform.rotation);
+            player = PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position, SpawnBrown.transform.rotation,0,BrownTeamIndicator);
         }
         else if(PhotonNetwork.NickName == "2")
         {
-            player = PhotonNetwork.Instantiate(prefab.name, SpawnGrey.transform.position, SpawnGrey.transform.rotation);
+            player = PhotonNetwork.Instantiate(prefab2.name, SpawnGrey.transform.position, SpawnGrey.transform.rotation,0, GreyTeamIndicator);
         }
         else if(PhotonNetwork.NickName == "3")
         {
-            player = PhotonNetwork.Instantiate(prefab.name, SpawnBrown.transform.position, SpawnBrown.transform.rotation);
+            player = PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position, SpawnBrown.transform.rotation,0,BrownTeamIndicator);
         }
         else if(PhotonNetwork.NickName == "4")
         {
-            player = PhotonNetwork.Instantiate(prefab.name, SpawnGrey.transform.position, SpawnGrey.transform.rotation);
+            player = PhotonNetwork.Instantiate(prefab2.name, SpawnGrey.transform.position, SpawnGrey.transform.rotation,0, GreyTeamIndicator);
         }
         else if(PhotonNetwork.NickName == "5")
         {
-            player = PhotonNetwork.Instantiate(prefab.name, SpawnBrown.transform.position, SpawnBrown.transform.rotation);
+            player = PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position, SpawnBrown.transform.rotation,0,BrownTeamIndicator);
         }
         else if(PhotonNetwork.NickName == "6")
         {
-            player = PhotonNetwork.Instantiate(prefab.name, SpawnGrey.transform.position, SpawnGrey.transform.rotation);
+            player = PhotonNetwork.Instantiate(prefab2.name, SpawnGrey.transform.position, SpawnGrey.transform.rotation,0, GreyTeamIndicator);
         }
         player.GetComponent<PlayerMove>().enabled = true;
         Camera.transform.position=player.transform.position+offset;

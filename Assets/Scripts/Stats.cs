@@ -16,14 +16,26 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
     public float attackSpeed;
     public float attackTime;
     public bool isHeroAlive=true;
+    public string Team;
+    private int temp;
 
     private HeroCombat heroCombatScript;
 
-    // Start is called before the first frame update
-    void Start()
+    public void OnPhotonInstantiate(PhotonMessageInfo info)
     {
-        //heroCombatScript = GameObject.FindGameObjectWithTag("Player").GetComponent<HeroCombat>();
+        temp=(int) info.photonView.InstantiationData[0];
+        if(temp==0)
+        {
+            Team="Brown";
+        }
+        else if( temp == 1)
+        {
+            Team="Grey";
+        }
+        Debug.Log("Team:"+Team);
     }
+    
+
 
     // Update is called once per frame
     void Update()
@@ -57,5 +69,10 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
             }
             
         }
+    }
+
+    string GetTeam()
+    {
+        return Team;
     }
 }

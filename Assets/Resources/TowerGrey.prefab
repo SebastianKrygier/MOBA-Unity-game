@@ -525,7 +525,7 @@ GameObject:
   - component: {fileID: -4716054689866282398}
   m_Layer: 0
   m_Name: TowerGrey
-  m_TagString: Enemy
+  m_TagString: Grey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -566,6 +566,7 @@ MonoBehaviour:
   attackSpeed: 0
   attackTime: 0
   isHeroAlive: 1
+  Team: 
 --- !u!65 &-8622377082879585054
 BoxCollider:
   m_ObjectHideFlags: 0

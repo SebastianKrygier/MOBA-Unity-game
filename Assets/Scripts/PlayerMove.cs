@@ -14,6 +14,7 @@ public class PlayerMove : MonoBehaviourPun
     Animator animator;
     public GameObject selectedHero;
     public GameObject myHero;
+   
 
     public PhotonView pv;
 
@@ -23,14 +24,16 @@ public class PlayerMove : MonoBehaviourPun
     public float rotateSpeedMovement;
 
     private HeroCombat heroCombatScript;
+    public Stats statsScript;
 
     void Start()
     {
         pv=GetComponent<PhotonView>();
         agent = GetComponent<NavMeshAgent> ();
         animator = GetComponent<Animator>();
-
+        statsScript = GetComponent<Stats>();
         heroCombatScript = GetComponent<HeroCombat>();
+        
     }
 
     [System.Obsolete]
@@ -63,6 +66,8 @@ public class PlayerMove : MonoBehaviourPun
                     if (hit.collider.tag == "Floor")
                     {
                             heroCombatScript.targetedEnemy = null;
+                            animator.SetBool("isAttacking", false);
+
                         
                             agent.Resume();
                             agent.SetDestination(hit.point);
@@ -100,22 +105,45 @@ public class PlayerMove : MonoBehaviourPun
         {
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity))
             {
-                if (hit.collider.tag == "Enemy")
+                if(statsScript.Team=="Brown")
                 {
+                    if (hit.collider.tag == "Grey" )
+                    {
 
-                    //if (hit.collider.gameObject.GetComponent<Targetable>().enemyType == Targetable.EnemyType.Minion)
-                    //{
-                    selectedHero = hit.collider.gameObject;
-                    myHero.GetComponent<HeroCombat>().targetedEnemy = selectedHero;
-                    
-                    animator.SetBool("isAttacking", true);
-                    //}
+                        //if (hit.collider.gameObject.GetComponent<Targetable>().enemyType == Targetable.EnemyType.Minion)
+                        //{
+                        selectedHero = hit.collider.gameObject;
+                        myHero.GetComponent<HeroCombat>().targetedEnemy = selectedHero;
+                        
+                        animator.SetBool("isAttacking", true);
+                        //}
+                    }
+                    else
+                    {
+                        selectedHero = null;
+                        myHero.GetComponent<HeroCombat>().targetedEnemy = null;
+                        
+                    }
                 }
-                else
+                else if(statsScript.Team =="Grey")
                 {
-                    selectedHero = null;
-                    myHero.GetComponent<HeroCombat>().targetedEnemy = null;
-                    
+                    if (hit.collider.tag == "Brown" )
+                    {
+
+                        //if (hit.collider.gameObject.GetComponent<Targetable>().enemyType == Targetable.EnemyType.Minion)
+                        //{
+                        selectedHero = hit.collider.gameObject;
+                        myHero.GetComponent<HeroCombat>().targetedEnemy = selectedHero;
+                        
+                        animator.SetBool("isAttacking", true);
+                        //}
+                    }
+                    else
+                    {
+                        selectedHero = null;
+                        myHero.GetComponent<HeroCombat>().targetedEnemy = null;
+                        
+                    }
                 }
             }
         }

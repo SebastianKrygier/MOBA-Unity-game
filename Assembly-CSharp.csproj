@@ -49,6 +49,7 @@
   <ItemGroup>
      <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
      <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />
+     <Compile Include="Assets\Scripts\IDemagable.cs" />
      <Compile Include="Assets\Scripts\CameraMove.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
      <Compile Include="Assets\Scripts\HeroCombat.cs" />
@@ -59,7 +60,6 @@
      <Compile Include="Assets\Scripts\DelayStartController.cs" />
      <Compile Include="Assets\Scripts\Character.cs" />
      <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChannelSelector.cs" />
-     <Compile Include="Assets\Scripts\Targetable.cs" />
      <Compile Include="Assets\Scripts\MainGame.cs" />
      <Compile Include="Assets\Scripts\Stats.cs" />
      <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\IgnoreUiRaycastWhenInactive.cs" />
@@ -71,7 +71,6 @@
      <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextToggleIsOnTransition.cs" />
      <Compile Include="Assets\Scripts\Spawn.cs" />
      <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
-     <Compile Include="Assets\Scripts\InputTargeting.cs" />
      <Compile Include="Assets\Scripts\PhotonPlayer.cs" />
      <None Include="Assets\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
      <None Include="Assets\Photon\PhotonUnityNetworking\changelog.txt" />

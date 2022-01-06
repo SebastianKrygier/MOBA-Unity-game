@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 2391953629364504556}
   m_Layer: 0
   m_Name: SlimePBR
-  m_TagString: Enemy
+  m_TagString: Brown
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -551,6 +551,7 @@ MonoBehaviour:
   attackSpeed: 1
   attackTime: 1
   isHeroAlive: 1
+  Team: 
 --- !u!65 &2391953629364504556
 BoxCollider:
   m_ObjectHideFlags: 0
