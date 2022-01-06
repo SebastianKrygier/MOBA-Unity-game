@@ -11,8 +11,8 @@ public class Spawn : MonoBehaviour
     public GameObject SpawnBrownMinion;
     public GameObject SpawnGreyMinion;
     public GameObject player=null;
-    [SerializeField] 
-    private int LineIndicator;
+     [SerializeField]
+    private object[] LineIndicator= new object[]{0};
 
     List<GameObject> listOfBrownMinions;
     List<GameObject> listOfGreyMinions;
@@ -71,8 +71,11 @@ public class Spawn : MonoBehaviour
         }
         player.GetComponent<PlayerMove>().enabled = true;
         Camera.transform.position=player.transform.position+offset;
-        listOfGreyMinions=new List<GameObject>();
-        listOfBrownMinions=new List<GameObject>();
+        
+        PhotonNetwork.Instantiate(MinionBrownPrefab.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,0);
+        PhotonNetwork.Instantiate(MinionGreyPrefab.name, SpawnGreyMinion.transform.position, SpawnGreyMinion.transform.rotation,0);
+        PhotonNetwork.Instantiate(MinionBrownPrefab.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,1);
+        PhotonNetwork.Instantiate(MinionGreyPrefab.name, SpawnGreyMinion.transform.position, SpawnGreyMinion.transform.rotation,1);
 
         
     }
@@ -82,42 +85,42 @@ public class Spawn : MonoBehaviour
     {
         if(player != null && Camera != null)
         {
-            Vector3 position = Camera.transform.position;
+                Vector3 position = Camera.transform.position;
 
-        if (Input.mousePosition.y >= Screen.height - size) // move up
-        {
-            position.z += speed * Time.deltaTime;
-        }
+            if (Input.mousePosition.y >= Screen.height - size) // move up
+            {
+                position.z += speed * Time.deltaTime;
+            }
 
-        if (Input.mousePosition.y <= size) // move down
-        {
-            position.z -= speed * Time.deltaTime;
-        }
+            if (Input.mousePosition.y <= size) // move down
+            {
+                position.z -= speed * Time.deltaTime;
+            }
 
-        if (Input.mousePosition.x >= Screen.width - size) // move right
-        {
-            position.x += speed * Time.deltaTime;
-        }
+            if (Input.mousePosition.x >= Screen.width - size) // move right
+            {
+                position.x += speed * Time.deltaTime;
+            }
 
-        if (Input.mousePosition.x <= size) // move left
-        {
-            position.x -= speed * Time.deltaTime;
-        }
+            if (Input.mousePosition.x <= size) // move left
+            {
+                position.x -= speed * Time.deltaTime;
+            }
 
-        Camera.transform.position = position;
+            Camera.transform.position = position;
         }
         if (!PhotonNetwork.IsMasterClient)
         {
             return;
         }
-        if(waitTimeForMinion<sinceMinionArrived)
+        /*if(waitTimeForMinion<sinceMinionArrived)
         {
-            for(int i=0; i<6; i++)
+            for(int i=0; i<1; i++)
             {
-                //listOfBrownMinions.Add((GameObject)PhotonNetwork.Instantiate(MinionBrownPrefab.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,LineIndicator));
-
-                //listOfGreyMinions.Add((GameObject)PhotonNetwork.Instantiate(MinionGreyPrefab.name, SpawnGreyMinion.transform.position, SpawnGreyMinion.transform.rotation,LineIndicator));
-                LineIndicator++;
+                listOfBrownMinions.Add((GameObject)PhotonNetwork.Instantiate(MinionBrownPrefab.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,0));
+                listOfGreyMinions.Add((GameObject)PhotonNetwork.Instantiate(MinionGreyPrefab.name, SpawnGreyMinion.transform.position, SpawnGreyMinion.transform.rotation,0));
+                listOfBrownMinions.Add((GameObject)PhotonNetwork.Instantiate(MinionBrownPrefab.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,1));
+                listOfGreyMinions.Add((GameObject)PhotonNetwork.Instantiate(MinionGreyPrefab.name, SpawnGreyMinion.transform.position, SpawnGreyMinion.transform.rotation,1));
                 while(spawnInterval>spawnDelay)
                 {
                     spawnDelay+=Time.deltaTime;
@@ -129,7 +132,7 @@ public class Spawn : MonoBehaviour
         else
         {
             sinceMinionArrived+=Time.deltaTime;
-        }
+        }*/
 
 
     }

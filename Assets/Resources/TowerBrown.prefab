@@ -226,6 +226,8 @@ GameObject:
   - component: {fileID: 471166}
   - component: {fileID: 430850272304184651}
   - component: {fileID: -1694690856307733467}
+  - component: {fileID: -3307871756405057291}
+  - component: {fileID: 5708523739604099591}
   m_Layer: 0
   m_Name: TowerBrown
   m_TagString: Enemy
@@ -261,11 +263,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d745da745b521fd42a4673328f0a3550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  health: 0
-  attackDamage: 0
+  champion: {fileID: 165880}
+  pv: {fileID: -3307871756405057291}
+  maxHealth: 100
+  health: 100
+  attackDamage: 20
   attackSpeed: 0
   attackTime: 0
+  isHeroAlive: 1
 --- !u!65 &-1694690856307733467
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -277,8 +282,47 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 7, y: 7, z: 7}
   m_Center: {x: 0, y: 0.57, z: 0}
+--- !u!114 &-3307871756405057291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 5708523739604099591}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &5708523739604099591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &171538
 GameObject:
   m_ObjectHideFlags: 0

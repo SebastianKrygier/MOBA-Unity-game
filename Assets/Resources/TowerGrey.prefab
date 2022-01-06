@@ -521,6 +521,8 @@ GameObject:
   - component: {fileID: 83648995244286170}
   - component: {fileID: -3846656763172646014}
   - component: {fileID: -8622377082879585054}
+  - component: {fileID: 1891964890933495314}
+  - component: {fileID: -4716054689866282398}
   m_Layer: 0
   m_Name: TowerGrey
   m_TagString: Enemy
@@ -556,11 +558,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d745da745b521fd42a4673328f0a3550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  health: 0
-  attackDamage: 0
+  champion: {fileID: 2219839718691274069}
+  pv: {fileID: 1891964890933495314}
+  maxHealth: 100
+  health: 100
+  attackDamage: 20
   attackSpeed: 0
   attackTime: 0
+  isHeroAlive: 1
 --- !u!65 &-8622377082879585054
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -572,5 +577,44 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 7, y: 7, z: 7}
   m_Center: {x: 0, y: 0.57, z: 0}
+--- !u!114 &1891964890933495314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2219839718691274069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: -4716054689866282398}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &-4716054689866282398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2219839718691274069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1

@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Photon.Pun;
-using UnityEngine.Networking;
+
 
 public class PlayerMove : MonoBehaviourPun
 {
-
 
     private bool clickFlag;
 
     public NavMeshAgent agent;
     Animator animator;
+    public GameObject selectedHero;
+    public GameObject myHero;
 
     public PhotonView pv;
 
@@ -25,8 +26,8 @@ public class PlayerMove : MonoBehaviourPun
 
     void Start()
     {
-        pv = GetComponent<PhotonView>();
-        agent = GetComponent<NavMeshAgent>();
+        pv=GetComponent<PhotonView>();
+        agent = GetComponent<NavMeshAgent> ();
         animator = GetComponent<Animator>();
 
         heroCombatScript = GetComponent<HeroCombat>();
@@ -35,13 +36,14 @@ public class PlayerMove : MonoBehaviourPun
     [System.Obsolete]
     void Update()
     {
+        
         //COMBAT
 
         if (heroCombatScript.targetedEnemy != null)
         {
-            if (heroCombatScript.targetedEnemy.GetComponent<HeroCombat>() != null)
+            if (heroCombatScript.targetedEnemy.GetComponent<Stats>() != null)
             {
-                if (!heroCombatScript.targetedEnemy.GetComponent<HeroCombat>().isHeroAlive)
+                if (!heroCombatScript.targetedEnemy.GetComponent<Stats>().isHeroAlive)
                 {
                     heroCombatScript.targetedEnemy = null;
                 }
@@ -50,10 +52,9 @@ public class PlayerMove : MonoBehaviourPun
 
         //MOVING
         RaycastHit hit;
-        Vector3 dest = Vector3.zero;
+        Vector3 dest=Vector3.zero;
 
-        if (pv.IsMine)
-        {
+        if(pv.IsMine){
             if (Input.GetMouseButtonDown(1) || clickFlag)
             {
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, WhatCanBeClicked))
@@ -61,17 +62,18 @@ public class PlayerMove : MonoBehaviourPun
 
                     if (hit.collider.tag == "Floor")
                     {
-                        heroCombatScript.targetedEnemy = null;
-                        agent.Resume();
-                        agent.SetDestination(hit.point);
-
+                            heroCombatScript.targetedEnemy = null;
+                        
+                            agent.Resume();
+                            agent.SetDestination(hit.point);
+                        
                         //Quaternion rotationToLookAt = Quaternion.LookRotation(hit.transform.position - transform.position);
                         //float rotationY = Mathf.SmoothDampAngle(transform.eulerAngles.y, rotationToLookAt.eulerAngles.y, ref rotateVelocity, rotateSpeedMovement * (Time.deltaTime * 5));
 
                         //transform.eulerAngles = new Vector3(0, rotationY, 0);
 
                     }
-
+                    
                 }
 
                 /*
@@ -84,39 +86,64 @@ public class PlayerMove : MonoBehaviourPun
                     transform.Translate(velocity * Time.deltaTime);
                 }
                     */
-                if (clickFlag)
+                if(clickFlag)
                 {
-                    clickFlag = false;
-
+                    clickFlag=false;
+                    
                 }
                 else
                 {
-                    clickFlag = true;
+                    clickFlag=true;
                 }
             }
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity))
+            {
+                if (hit.collider.tag == "Enemy")
+                {
+
+                    //if (hit.collider.gameObject.GetComponent<Targetable>().enemyType == Targetable.EnemyType.Minion)
+                    //{
+                    selectedHero = hit.collider.gameObject;
+                    myHero.GetComponent<HeroCombat>().targetedEnemy = selectedHero;
+                    
+                    animator.SetBool("isAttacking", true);
+                    //}
+                }
+                else
+                {
+                    selectedHero = null;
+                    myHero.GetComponent<HeroCombat>().targetedEnemy = null;
+                    
+                }
+            }
+        }
         }
 
         //ANIMATIONS
 
-        if (agent.velocity != Vector3.zero)
+
+
+        if(agent.velocity != Vector3.zero)
         {
-            animator.SetBool("isWalking", true);
+            animator.SetBool("IsWalking", true);
         }
 
-        if (agent.remainingDistance < 15)
-        {
-            agent.Stop();
-            // agent.ResetPath();
+        if(agent.remainingDistance<15)
+            {
+                agent.Stop();
+               // agent.ResetPath();
 
-            animator.SetBool("isWalking", false);
-        }
-
-
-
-
-
+                animator.SetBool("IsWalking", false);
+            }
+        
+            
+        
+        
+        
     }
-
+   
 
 
 }

@@ -1132,7 +1132,6 @@ GameObject:
   - component: {fileID: 4648199790356297811}
   - component: {fileID: 4934233738354181043}
   - component: {fileID: -1908006510226440123}
-  - component: {fileID: -5310466838246668761}
   m_Layer: 0
   m_Name: Robot Kyle
   m_TagString: Player
@@ -1188,12 +1187,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1125480223834017911}
+  selectedHero: {fileID: 0}
+  myHero: {fileID: 1125480222766852840}
   pv: {fileID: 3099873503682405173}
   WhatCanBeClicked:
     serializedVersion: 2
     m_Bits: 64
-  rotateVelocity: 30
-  rotateSpeedMovement: 30
+  rotateVelocity: 0
+  rotateSpeedMovement: 0
 --- !u!195 &1125480223834017911
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1204,11 +1205,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 355
-  m_Acceleration: 100
+  m_Speed: 300
+  m_Acceleration: 10
   avoidancePriority: 50
-  m_AngularSpeed: 1200
-  m_StoppingDistance: 0
+  m_AngularSpeed: 600
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1270,10 +1271,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroAttackType: 0
   targetedEnemy: {fileID: 0}
-  attackRange: 50
-  rotateSpeedForAttack: 0.075
+  attackRange: 20
+  rotateSpeedForAttack: 0
+  agent: {fileID: 1125480223834017911}
   basicAtkIdle: 0
-  isHeroAlive: 0
   performMeleeAttack: 1
   distance: 0
 --- !u!114 &4934233738354181043
@@ -1303,6 +1304,12 @@ MonoBehaviour:
   - Type: 9
     SynchronizeType: 0
     Name: Jump
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsWalking
+  - Type: 4
+    SynchronizeType: 0
+    Name: isAttacking
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0
@@ -1318,31 +1325,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d745da745b521fd42a4673328f0a3550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  champion: {fileID: 1125480222766852840}
+  pv: {fileID: 3099873503682405173}
   maxHealth: 100
   health: 100
-  attackDamage: 10
+  attackDamage: 30
   attackSpeed: 1
   attackTime: 1
---- !u!114 &-5310466838246668761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125480222766852840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce3565db248aff343a88d55f693e23da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heroAttackType: 0
-  targetedEnemy: {fileID: 0}
-  attackRange: 100
-  rotateSpeedForAttack: 0
-  basicAtkIdle: 0
-  isHeroAlive: 0
-  performMeleeAttack: 1
-  distance: 0
+  isHeroAlive: 1
 --- !u!1 &1125480222766852842
 GameObject:
   m_ObjectHideFlags: 0

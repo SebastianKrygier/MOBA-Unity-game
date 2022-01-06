@@ -29,7 +29,7 @@ public class CameraMove : MonoBehaviourPun
             position.z -= speed * Time.deltaTime;
         }
 
-        if (Input.mousePosition.x >= Screen.height - size) // move right
+        if (Input.mousePosition.x >= Screen.width - size) // move right
         {
             position.x += speed * Time.deltaTime;
         }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class HeroCombat : MonoBehaviour
 {
@@ -19,13 +20,15 @@ public class HeroCombat : MonoBehaviour
     public GameObject targetedEnemy;
     public float attackRange = 100;
     public float rotateSpeedForAttack;
+    public NavMeshAgent agent;
+    
 
     private PlayerMove moveScript;
     private Stats statsScript;
     private Animator anim;
 
     public bool basicAtkIdle = false;
-    public bool isHeroAlive;
+   
     public bool performMeleeAttack = true;
 
     //
@@ -74,15 +77,19 @@ public class HeroCombat : MonoBehaviour
     IEnumerator MeleeAttackInterval()
     {
         performMeleeAttack = false;
-        //anim.SetBool("Basic Attack", true);
+        //anim.SetBool("isAttacking", true);
         yield return new WaitForSeconds(statsScript.attackSpeed / ((100 + statsScript.attackSpeed) * 0.01f));
         MeleeAttack();
+        //anim.SetBool("isAttacking", false);
 
         if (targetedEnemy == null)
         {
-            //anim.SetBool("Basic Attack", false);
+            anim.SetBool("isAttacking", false);
+            anim.SetBool("IsWalking", false);
+            agent.Stop();
             performMeleeAttack = true;
         }
+        
     }
 
     public void MeleeAttack()
@@ -91,10 +98,13 @@ public class HeroCombat : MonoBehaviour
         {
             //if (targetedEnemy.GetComponent<Targetable>().enemyType == Targetable.EnemyType.Minion)
             //{
-            targetedEnemy.GetComponent<Stats>().health -= statsScript.attackDamage;
+            //anim.SetBool("isAttacking", true);
+            targetedEnemy.GetComponent<IDemagable>()?.TakeDemage(statsScript.attackDamage);
+            
             //}
         }
 
         performMeleeAttack = true;
+        //anim.SetBool("isAttacking", false);
     }
 }

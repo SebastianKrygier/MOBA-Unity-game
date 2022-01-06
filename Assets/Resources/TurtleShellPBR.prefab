@@ -785,7 +785,6 @@ GameObject:
   - component: {fileID: -3675343286968067982}
   - component: {fileID: 5556076256646973714}
   - component: {fileID: 7130918534847143454}
-  - component: {fileID: 7028985062054778273}
   - component: {fileID: 2103479290487528300}
   m_Layer: 0
   m_Name: TurtleShellPBR
@@ -924,12 +923,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50d42e8de3c4eb4ca17f249ae8798a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  GreyLineDst: {fileID: 0}
-  BrownLineDst: {fileID: 0}
-  GreyBase: {fileID: 0}
-  BrownBase: {fileID: 0}
-  LineIndicator: 0
+  agent: {fileID: 6852256364727370650}
+  GreyLineDst: {fileID: 5873871504455820992, guid: 33f50b6d6802b4c408d5219fe3a05bb4, type: 3}
+  BrownLineDst: {fileID: 2692215510638272135, guid: bde761b767cced441a1362d82e1661cb, type: 3}
+  GreyBase: {fileID: 7417436171102559933, guid: 54845f801030a1c46bad1bbc22bc5934, type: 3}
+  BrownBase: {fileID: 4317167616904733320, guid: 838de2b0e5035634d91afa28172f053e, type: 3}
 --- !u!114 &7130918534847143454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -942,24 +940,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d745da745b521fd42a4673328f0a3550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  health: 0
+  champion: {fileID: 1774625739149480}
+  pv: {fileID: 7069660935276710196}
+  maxHealth: 120
+  health: 120
   attackDamage: 0
   attackSpeed: 0
   attackTime: 0
---- !u!114 &7028985062054778273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1774625739149480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a78babd4eac7b74084c2b4af2062afe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyType: 0
+  isHeroAlive: 1
 --- !u!65 &2103479290487528300
 BoxCollider:
   m_ObjectHideFlags: 0
