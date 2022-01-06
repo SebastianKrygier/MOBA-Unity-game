@@ -7,7 +7,7 @@ TagManager:
   - Floor
   - Enemy
   - Brown
-  - Grey
+  - Gray
   layers:
   - Default
   - TransparentFX

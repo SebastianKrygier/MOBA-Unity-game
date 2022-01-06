@@ -107,7 +107,7 @@ public class PlayerMove : MonoBehaviourPun
             {
                 if(statsScript.Team=="Brown")
                 {
-                    if (hit.collider.tag == "Grey" )
+                    if (hit.collider.tag == "Gray" )
                     {
 
                         //if (hit.collider.gameObject.GetComponent<Targetable>().enemyType == Targetable.EnemyType.Minion)
@@ -115,7 +115,7 @@ public class PlayerMove : MonoBehaviourPun
                         selectedHero = hit.collider.gameObject;
                         myHero.GetComponent<HeroCombat>().targetedEnemy = selectedHero;
                         
-                        animator.SetBool("isAttacking", true);
+                        //animator.SetBool("isAttacking", true);
                         //}
                     }
                     else
@@ -125,7 +125,7 @@ public class PlayerMove : MonoBehaviourPun
                         
                     }
                 }
-                else if(statsScript.Team =="Grey")
+                if(statsScript.Team =="Gray")
                 {
                     if (hit.collider.tag == "Brown" )
                     {
@@ -135,7 +135,7 @@ public class PlayerMove : MonoBehaviourPun
                         selectedHero = hit.collider.gameObject;
                         myHero.GetComponent<HeroCombat>().targetedEnemy = selectedHero;
                         
-                        animator.SetBool("isAttacking", true);
+                        //animator.SetBool("isAttacking", true);
                         //}
                     }
                     else

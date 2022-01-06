@@ -525,7 +525,7 @@ GameObject:
   - component: {fileID: -4716054689866282398}
   m_Layer: 0
   m_Name: TowerGrey
-  m_TagString: Grey
+  m_TagString: Gray
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -617,5 +617,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
+  m_SynchronizeScale: 1
   m_UseLocal: 1

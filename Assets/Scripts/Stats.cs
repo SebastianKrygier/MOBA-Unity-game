@@ -30,7 +30,7 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
         }
         else if( temp == 1)
         {
-            Team="Grey";
+            Team="Gray";
         }
         Debug.Log("Team:"+Team);
     }
@@ -71,8 +71,5 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
         }
     }
 
-    string GetTeam()
-    {
-        return Team;
-    }
+  
 }

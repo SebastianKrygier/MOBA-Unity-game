@@ -77,7 +77,7 @@ public class HeroCombat : MonoBehaviour
     IEnumerator MeleeAttackInterval()
     {
         performMeleeAttack = false;
-        //anim.SetBool("isAttacking", true);
+        anim.SetBool("isAttacking", true);
         yield return new WaitForSeconds(statsScript.attackSpeed / ((100 + statsScript.attackSpeed) * 0.01f));
         MeleeAttack();
         //anim.SetBool("isAttacking", false);

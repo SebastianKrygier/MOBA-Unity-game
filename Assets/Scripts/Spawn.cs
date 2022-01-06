@@ -7,42 +7,27 @@ public class Spawn : MonoBehaviour
 {
     int PlayersNumber=PhotonNetwork.PlayerList.Length;
     public GameObject SpawnBrown;
-    public GameObject SpawnGrey;
+    public GameObject SpawnGray;
     public GameObject SpawnBrownMinion;
-    public GameObject SpawnGreyMinion;
+    public GameObject SpawnGrayMinion;
     public GameObject player=null;
-     [SerializeField]
-    private object[] LineIndicator= new object[]{0};
-
-    [SerializeField]
-    private object[] BrownTeamIndicator= new object[]{0};
-    [SerializeField]
-    private object[] GreyTeamIndicator= new object[]{1};
-
-
-
-    List<GameObject> listOfBrownMinions;
-    List<GameObject> listOfGreyMinions;
 
 
     [SerializeField]
     private float waitTimeForMinion;
-
-    private float sinceMinionArrived=0.0f;
-
-    [SerializeField]
-    private float spawnInterval;
+    bool TimeToSpawn=true;
     
-    private float spawnDelay=0.0f;
+
+    
     public GameObject Camera;
 
     public Vector3 offset;
     
     [SerializeField] private GameObject prefab1;
     [SerializeField] private GameObject prefab2;
-    [SerializeField] private GameObject MinionGreyPrefab;
+    [SerializeField] private GameObject MinionGrayPrefab;
     [SerializeField] private GameObject MinionBrownPrefab;
-    public float speed = 25;
+    public float speed = 40;
     public float size = 10;
 
 
@@ -56,35 +41,32 @@ public class Spawn : MonoBehaviour
         //player.GetComponent<Animator>().enabled = true;
         if (PhotonNetwork.NickName == "1")
         {
-            player = PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position, SpawnBrown.transform.rotation,0,BrownTeamIndicator);
+            player = PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position, SpawnBrown.transform.rotation,0);
         }
         else if(PhotonNetwork.NickName == "2")
         {
-            player = PhotonNetwork.Instantiate(prefab2.name, SpawnGrey.transform.position, SpawnGrey.transform.rotation,0, GreyTeamIndicator);
+            player = PhotonNetwork.Instantiate(prefab2.name, SpawnGray.transform.position, SpawnGray.transform.rotation,0);
         }
         else if(PhotonNetwork.NickName == "3")
         {
-            player = PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position, SpawnBrown.transform.rotation,0,BrownTeamIndicator);
+            player = PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position, SpawnBrown.transform.rotation,0);
         }
         else if(PhotonNetwork.NickName == "4")
         {
-            player = PhotonNetwork.Instantiate(prefab2.name, SpawnGrey.transform.position, SpawnGrey.transform.rotation,0, GreyTeamIndicator);
+            player = PhotonNetwork.Instantiate(prefab2.name, SpawnGray.transform.position, SpawnGray.transform.rotation,0);
         }
         else if(PhotonNetwork.NickName == "5")
         {
-            player = PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position, SpawnBrown.transform.rotation,0,BrownTeamIndicator);
+            player = PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position, SpawnBrown.transform.rotation,0);
         }
         else if(PhotonNetwork.NickName == "6")
         {
-            player = PhotonNetwork.Instantiate(prefab2.name, SpawnGrey.transform.position, SpawnGrey.transform.rotation,0, GreyTeamIndicator);
+            player = PhotonNetwork.Instantiate(prefab2.name, SpawnGray.transform.position, SpawnGray.transform.rotation,0);
         }
         player.GetComponent<PlayerMove>().enabled = true;
         Camera.transform.position=player.transform.position+offset;
         
-        PhotonNetwork.Instantiate(MinionBrownPrefab.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,0);
-        PhotonNetwork.Instantiate(MinionGreyPrefab.name, SpawnGreyMinion.transform.position, SpawnGreyMinion.transform.rotation,0);
-        PhotonNetwork.Instantiate(MinionBrownPrefab.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,1);
-        PhotonNetwork.Instantiate(MinionGreyPrefab.name, SpawnGreyMinion.transform.position, SpawnGreyMinion.transform.rotation,1);
+        
 
         
     }
@@ -122,27 +104,28 @@ public class Spawn : MonoBehaviour
         {
             return;
         }
-        /*if(waitTimeForMinion<sinceMinionArrived)
+        if(TimeToSpawn)
         {
-            for(int i=0; i<1; i++)
+            for(int i=0; i<3; i++)
             {
-                listOfBrownMinions.Add((GameObject)PhotonNetwork.Instantiate(MinionBrownPrefab.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,0));
-                listOfGreyMinions.Add((GameObject)PhotonNetwork.Instantiate(MinionGreyPrefab.name, SpawnGreyMinion.transform.position, SpawnGreyMinion.transform.rotation,0));
-                listOfBrownMinions.Add((GameObject)PhotonNetwork.Instantiate(MinionBrownPrefab.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,1));
-                listOfGreyMinions.Add((GameObject)PhotonNetwork.Instantiate(MinionGreyPrefab.name, SpawnGreyMinion.transform.position, SpawnGreyMinion.transform.rotation,1));
-                while(spawnInterval>spawnDelay)
-                {
-                    spawnDelay+=Time.deltaTime;
-                }
-                spawnDelay=0.0f;
+                TimeToSpawn=false;
+                PhotonNetwork.Instantiate(MinionBrownPrefab.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,0);
+                PhotonNetwork.Instantiate(MinionGrayPrefab.name, SpawnGrayMinion.transform.position, SpawnGrayMinion.transform.rotation,0);
+                PhotonNetwork.Instantiate(MinionBrownPrefab.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,0);
+                PhotonNetwork.Instantiate(MinionGrayPrefab.name, SpawnGrayMinion.transform.position, SpawnGrayMinion.transform.rotation,0);
+                waiter();
+                
             }
-            sinceMinionArrived=0.0f;
         }
-        else
-        {
-            sinceMinionArrived+=Time.deltaTime;
-        }*/
+        
 
+
+    }
+
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(waitTimeForMinion);
+        TimeToSpawn=true;
 
     }
     void Update()
