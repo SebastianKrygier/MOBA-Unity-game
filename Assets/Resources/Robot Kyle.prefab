@@ -1272,7 +1272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroAttackType: 0
   targetedEnemy: {fileID: 0}
-  attackRange: 5
+  attackRange: 20
   rotateSpeedForAttack: 0
   agent: {fileID: 1125480223834017911}
   basicAtkIdle: 0
