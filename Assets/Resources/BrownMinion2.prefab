@@ -339,7 +339,7 @@ Transform:
   m_GameObject: {fileID: 6508628581877582782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 556.8228, y: 144.99998, z: -22.488037}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 6510569687432100374}
   - {fileID: 6510854764624243212}
@@ -375,7 +375,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 28
+  m_Speed: 18
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 1200
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
+  m_SynchronizeScale: 1
   m_UseLocal: 0
 --- !u!114 &6830915947272961255
 MonoBehaviour:
@@ -461,6 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   champion: {fileID: 6508628581877582782}
+  RespawnController: {fileID: 0}
   pv: {fileID: 7782540518292062615}
   maxHealth: 100
   health: 100
@@ -468,7 +469,7 @@ MonoBehaviour:
   attackSpeed: 1
   attackTime: 1
   isHeroAlive: 1
-  Team: 
+  Team: Brown
 --- !u!65 &8891362706600671870
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -495,10 +496,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 518434432098222494}
-  GrayLineDst: {fileID: 3857254275044553104, guid: af4ccae7cd4999f4e9b23f9d30453116, type: 3}
-  BrownLineDst: {fileID: 2692215510638272135, guid: bde761b767cced441a1362d82e1661cb, type: 3}
-  GrayBase: {fileID: 1284565845581779331, guid: c02b9e1e62b116642a77f9b6d187c38d, type: 3}
-  BrownBase: {fileID: 4317167616904733320, guid: 838de2b0e5035634d91afa28172f053e, type: 3}
+  GrayLineDst: {fileID: 7525636477543669155, guid: af4ccae7cd4999f4e9b23f9d30453116, type: 3}
+  BrownLineDst: {fileID: 6542213384565665451, guid: bde761b767cced441a1362d82e1661cb, type: 3}
+  GrayBase: {fileID: 2905153638751245754, guid: c02b9e1e62b116642a77f9b6d187c38d, type: 3}
+  BrownBase: {fileID: 6837087026148147339, guid: 838de2b0e5035634d91afa28172f053e, type: 3}
 --- !u!1 &6508708804691695690
 GameObject:
   m_ObjectHideFlags: 0

@@ -1681,9 +1681,10 @@ GameObject:
   - component: {fileID: 4565582421663035788}
   - component: {fileID: -2297319297393812859}
   - component: {fileID: 5039749440965779567}
+  - component: {fileID: 6606295694312368424}
   m_Layer: 0
   m_Name: Zombie1
-  m_TagString: Gray
+  m_TagString: Brown
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1697,7 +1698,7 @@ Transform:
   m_GameObject: {fileID: 4493914613880827488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 15, y: 15, z: 15}
   m_Children:
   - {fileID: 3095270377931777224}
   - {fileID: 564725668130312496}
@@ -1877,6 +1878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   champion: {fileID: 4493914613880827488}
+  RespawnController: {fileID: 8043701273861487086, guid: 7dd58f51fa377f340a6783c761ff5b3f, type: 3}
   pv: {fileID: -1934941238899598808}
   maxHealth: 120
   health: 120
@@ -1885,6 +1887,19 @@ MonoBehaviour:
   attackTime: 1
   isHeroAlive: 1
   Team: Brown
+--- !u!65 &6606295694312368424
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4493914613880827488}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4710940672626480558
 GameObject:
   m_ObjectHideFlags: 0

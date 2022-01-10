@@ -406,7 +406,7 @@ Transform:
   m_GameObject: {fileID: 1919012471076396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 4409866491529092}
   - {fileID: 4127066169186206}
@@ -442,7 +442,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 28
+  m_Speed: 18
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 1200
@@ -528,10 +528,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 6729577669952224268}
-  GrayLineDst: {fileID: 3857254275044553104, guid: af4ccae7cd4999f4e9b23f9d30453116, type: 3}
-  BrownLineDst: {fileID: 2692215510638272135, guid: bde761b767cced441a1362d82e1661cb, type: 3}
-  GrayBase: {fileID: 1284565845581779331, guid: c02b9e1e62b116642a77f9b6d187c38d, type: 3}
-  BrownBase: {fileID: 4317167616904733320, guid: 838de2b0e5035634d91afa28172f053e, type: 3}
+  GrayLineDst: {fileID: 7525636477543669155, guid: af4ccae7cd4999f4e9b23f9d30453116, type: 3}
+  BrownLineDst: {fileID: 6542213384565665451, guid: bde761b767cced441a1362d82e1661cb, type: 3}
+  GrayBase: {fileID: 2905153638751245754, guid: c02b9e1e62b116642a77f9b6d187c38d, type: 3}
+  BrownBase: {fileID: 6837087026148147339, guid: 838de2b0e5035634d91afa28172f053e, type: 3}
 --- !u!114 &-3995738186121203890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,6 +545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   champion: {fileID: 1919012471076396}
+  RespawnController: {fileID: 0}
   pv: {fileID: -5308414389931541499}
   maxHealth: 100
   health: 100
@@ -552,7 +553,7 @@ MonoBehaviour:
   attackSpeed: 1
   attackTime: 1
   isHeroAlive: 1
-  Team: 
+  Team: Brown
 --- !u!65 &2391953629364504556
 BoxCollider:
   m_ObjectHideFlags: 0

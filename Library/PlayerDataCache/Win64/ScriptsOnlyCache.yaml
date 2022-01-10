@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - BrownMinionBehaviour1
     - BrownMinionBehaviour2
+    - CameraMove
     - ConnectToServer
     - CreateAndJoinRooms
     - DelayStartController
@@ -11,6 +12,7 @@ ScriptsOnlyBuild:
     - HeroCombat
     - MainGame
     - PlayerMove
+    - RespawnController
     - Spawn
     - Stats
     PhotonUnityNetworking.Demos.dll:
@@ -83,11 +85,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2740}
     - Class: 114
-      Script: {instanceID: 2944}
+      Script: {instanceID: 2946}
     - Class: 114
-      Script: {instanceID: 2954}
+      Script: {instanceID: 2956}
     - Class: 114
-      Script: {instanceID: 3044}
+      Script: {instanceID: 3046}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -172,39 +174,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2740}
     - Class: 114
-      Script: {instanceID: 2944}
+      Script: {instanceID: 2772}
     - Class: 114
-      Script: {instanceID: 2948}
+      Script: {instanceID: 2946}
     - Class: 114
-      Script: {instanceID: 2956}
+      Script: {instanceID: 2950}
     - Class: 114
-      Script: {instanceID: 3192}
+      Script: {instanceID: 2958}
     - Class: 114
-      Script: {instanceID: 3472}
+      Script: {instanceID: 3194}
     - Class: 114
-      Script: {instanceID: 3476}
+      Script: {instanceID: 3474}
     - Class: 114
-      Script: {instanceID: 3506}
+      Script: {instanceID: 3478}
     - Class: 114
-      Script: {instanceID: 3816}
+      Script: {instanceID: 3508}
     - Class: 114
-      Script: {instanceID: 3820}
+      Script: {instanceID: 3818}
     - Class: 114
-      Script: {instanceID: 3988}
+      Script: {instanceID: 3822}
     - Class: 114
-      Script: {instanceID: 4032}
+      Script: {instanceID: 3992}
     - Class: 114
-      Script: {instanceID: 4202}
+      Script: {instanceID: 4036}
     - Class: 114
-      Script: {instanceID: 4432}
+      Script: {instanceID: 4206}
     - Class: 114
-      Script: {instanceID: 4574}
+      Script: {instanceID: 4436}
     - Class: 114
-      Script: {instanceID: 4690}
+      Script: {instanceID: 4578}
     - Class: 114
-      Script: {instanceID: 4882}
+      Script: {instanceID: 4694}
     - Class: 114
-      Script: {instanceID: 16850}
+      Script: {instanceID: 4888}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -269,13 +271,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2740}
     - Class: 114
-      Script: {instanceID: 2786}
+      Script: {instanceID: 2788}
     - Class: 114
-      Script: {instanceID: 2954}
+      Script: {instanceID: 2956}
     - Class: 114
-      Script: {instanceID: 3044}
+      Script: {instanceID: 3046}
     - Class: 114
-      Script: {instanceID: 3318}
+      Script: {instanceID: 3320}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -348,23 +350,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2740}
     - Class: 114
-      Script: {instanceID: 2944}
+      Script: {instanceID: 2772}
     - Class: 114
-      Script: {instanceID: 2948}
+      Script: {instanceID: 2946}
     - Class: 114
-      Script: {instanceID: 2954}
+      Script: {instanceID: 2950}
     - Class: 114
       Script: {instanceID: 2956}
     - Class: 114
-      Script: {instanceID: 3050}
+      Script: {instanceID: 2958}
     - Class: 114
-      Script: {instanceID: 3192}
+      Script: {instanceID: 3052}
     - Class: 114
-      Script: {instanceID: 3472}
+      Script: {instanceID: 3194}
     - Class: 114
-      Script: {instanceID: 4432}
+      Script: {instanceID: 3474}
     - Class: 114
-      Script: {instanceID: 4690}
+      Script: {instanceID: 3478}
+    - Class: 114
+      Script: {instanceID: 3952}
+    - Class: 114
+      Script: {instanceID: 4206}
+    - Class: 114
+      Script: {instanceID: 4436}
+    - Class: 114
+      Script: {instanceID: 4694}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -896,6 +906,12 @@ ScriptsOnlyBuild:
     className: LoaderAnime
   - hash:
       serializedVersion: 2
+      Hash: 604dd671badccaf773c92f1e325ff66a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RespawnController
+  - hash:
+      serializedVersion: 2
       Hash: f40fedccd4adbc76605bea6d67537e4b
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1064,7 +1080,7 @@ ScriptsOnlyBuild:
     className: BezierCurve
   - hash:
       serializedVersion: 2
-      Hash: 1404fd49d0f482b02e3780279591447c
+      Hash: d27b87bd6ace60217437579ac375f938
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Stats
@@ -1412,6 +1428,12 @@ ScriptsOnlyBuild:
     className: PunTeams
   - hash:
       serializedVersion: 2
+      Hash: ad11f788498a1288d1ee397b75d9b59b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraMove
+  - hash:
+      serializedVersion: 2
       Hash: 7829e932aec962afd9bcfad28ffff27d
     assemblyName: PhotonUnityNetworking.Utilities.dll
     namespaceName: Photon.Pun.UtilityScripts
@@ -1688,7 +1710,7 @@ ScriptsOnlyBuild:
     className: ThirdPersonUserControl
   - hash:
       serializedVersion: 2
-      Hash: 807002e90d73f991a3e84ef3d4268656
+      Hash: 81cb0a070b04a0651a61c29389ba03c5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Spawn
@@ -1788,4 +1810,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/lobby.unity
   - Assets/Scenes/DelayStartWaitingRoom.unity
   - Assets/Scenes/project.unity
-  playerPath: D:/UnityProjects/MOBA-Unity-game/MOBA.exe
+  playerPath: C:/Users/Tomek/Desktop/GitHub/MOBA.exe

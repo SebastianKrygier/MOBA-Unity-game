@@ -25,6 +25,11 @@ public class GrayMinionBehaviour2 : MonoBehaviour
        animator = GetComponent<Animator>();
     }
 
+    private void OnNetworkInstantiate() {
+        agent.SetDestination(BrownLineDst.transform.position);
+        destinationIsSet=true;
+    }
+
     // Update is called once per frame
     void Update()
     {

@@ -1132,9 +1132,10 @@ GameObject:
   - component: {fileID: 4648199790356297811}
   - component: {fileID: 4934233738354181043}
   - component: {fileID: -1908006510226440123}
+  - component: {fileID: 971680698116503200}
   m_Layer: 0
   m_Name: Robot Kyle
-  m_TagString: Player
+  m_TagString: Gray
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1148,7 +1149,7 @@ Transform:
   m_GameObject: {fileID: 1125480222766852840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 746, y: 0, z: 246}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 15, y: 15, z: 15}
   m_Children:
   - {fileID: 1125480222766495404}
   - {fileID: 1125480222766495402}
@@ -1327,6 +1328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   champion: {fileID: 1125480222766852840}
+  RespawnController: {fileID: 8043701273861487086, guid: 7dd58f51fa377f340a6783c761ff5b3f, type: 3}
   pv: {fileID: 3099873503682405173}
   maxHealth: 100
   health: 100
@@ -1335,6 +1337,19 @@ MonoBehaviour:
   attackTime: 1
   isHeroAlive: 1
   Team: Gray
+--- !u!65 &971680698116503200
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125480222766852840}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1125480222766852842
 GameObject:
   m_ObjectHideFlags: 0

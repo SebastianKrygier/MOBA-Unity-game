@@ -15,7 +15,9 @@ public class Spawn : MonoBehaviour
 
     [SerializeField]
     private float waitTimeForMinion;
+    [SerializeField]
     bool TimeToSpawn=true;
+    bool readyToStart=true;
     
 
     
@@ -24,11 +26,19 @@ public class Spawn : MonoBehaviour
     public Vector3 offset;
     
     [SerializeField] private GameObject prefab1;
+    [SerializeField] private GameObject RespawnPrefab;
     [SerializeField] private GameObject prefab2;
-    [SerializeField] private GameObject MinionGrayPrefab;
-    [SerializeField] private GameObject MinionBrownPrefab;
-    public float speed = 40;
+    [SerializeField] private GameObject MinionGrayPrefab1;
+    [SerializeField] private GameObject MinionGrayPrefab2;
+    [SerializeField] private GameObject MinionBrownPrefab1;
+    [SerializeField] private GameObject MinionBrownPrefab2;
+
+    public float speed = 50;
     public float size = 10;
+    private int counter=0;
+
+    [SerializeField]
+    private float InitialRespawnDelay;
 
 
     // Start is called before the first frame update
@@ -64,6 +74,7 @@ public class Spawn : MonoBehaviour
             player = PhotonNetwork.Instantiate(prefab2.name, SpawnGray.transform.position, SpawnGray.transform.rotation,0);
         }
         player.GetComponent<PlayerMove>().enabled = true;
+        PhotonNetwork.Instantiate(RespawnPrefab.name, SpawnGray.transform.position, SpawnGray.transform.rotation,0);
         Camera.transform.position=player.transform.position+offset;
         
         
@@ -74,58 +85,160 @@ public class Spawn : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(player != null && Camera != null)
+      /*  if(player != null && Camera != null)
         {
                 Vector3 position = Camera.transform.position;
-
-            if (Input.mousePosition.y >= Screen.height - size) // move up
-            {
-                position.z += speed * Time.deltaTime;
+            if(Camera.transform.position.z<650){
+                if (Input.mousePosition.y >= Screen.height - size) // move up
+                {
+                    position.z += speed * Time.deltaTime;
+                }
             }
-
-            if (Input.mousePosition.y <= size) // move down
-            {
-                position.z -= speed * Time.deltaTime;
+             if(Camera.transform.position.z>35){
+                if (Input.mousePosition.y <= size) // move down
+                {
+                    position.z -= speed * Time.deltaTime;
+                }
+             }
+            if(Camera.transform.position.x<595){
+                if (Input.mousePosition.x >= Screen.width - size) // move right
+                {
+                    position.x += speed * Time.deltaTime;
+                }
             }
-
-            if (Input.mousePosition.x >= Screen.width - size) // move right
-            {
-                position.x += speed * Time.deltaTime;
-            }
-
-            if (Input.mousePosition.x <= size) // move left
-            {
-                position.x -= speed * Time.deltaTime;
+            if(Camera.transform.position.x>380){
+                if (Input.mousePosition.x <= size) // move left
+                {
+                    position.x -= speed * Time.deltaTime;
+                }
             }
 
             Camera.transform.position = position;
-        }
+        }*/
         if (!PhotonNetwork.IsMasterClient)
         {
             return;
         }
         if(TimeToSpawn)
         {
-            for(int i=0; i<3; i++)
-            {
-                TimeToSpawn=false;
-                PhotonNetwork.Instantiate(MinionBrownPrefab.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,0);
-                PhotonNetwork.Instantiate(MinionGrayPrefab.name, SpawnGrayMinion.transform.position, SpawnGrayMinion.transform.rotation,0);
-                PhotonNetwork.Instantiate(MinionBrownPrefab.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,0);
-                PhotonNetwork.Instantiate(MinionGrayPrefab.name, SpawnGrayMinion.transform.position, SpawnGrayMinion.transform.rotation,0);
-                waiter();
+            
+                if(readyToStart && counter==0)
+                {
+                    PhotonNetwork.Instantiate(MinionBrownPrefab1.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,0);
+                    readyToStart=false;
+                    counter++;
+                    StartCoroutine(smallWaiter());
+                }
+                   
+                if(readyToStart&& counter==1)
+                {
+                    PhotonNetwork.Instantiate(MinionGrayPrefab1.name, SpawnGrayMinion.transform.position, SpawnGrayMinion.transform.rotation,0);
+                    readyToStart=false;
+                    counter++;
+                    StartCoroutine(smallWaiter());
+                }
+
+                if(readyToStart&& counter==2)
+                {
+                   
+                    PhotonNetwork.Instantiate(MinionBrownPrefab2.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,0);
+                    readyToStart=false;
+                    counter++;
+                    StartCoroutine(smallWaiter());
+                }
+         
+                if(readyToStart&& counter==3)
+                {
+                    
+                   PhotonNetwork.Instantiate(MinionGrayPrefab2.name, SpawnGrayMinion.transform.position, SpawnGrayMinion.transform.rotation,0);
+                   readyToStart=false;
+                    counter++;
+                    StartCoroutine(smallWaiter());
+                }
+                if(readyToStart && counter==4)
+                {
+                    PhotonNetwork.Instantiate(MinionBrownPrefab1.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,0);
+                    readyToStart=false;
+                    counter++;
+                    StartCoroutine(smallWaiter());
+                }
+                   
+                if(readyToStart&& counter==5)
+                {
+                    PhotonNetwork.Instantiate(MinionGrayPrefab1.name, SpawnGrayMinion.transform.position, SpawnGrayMinion.transform.rotation,0);
+                    readyToStart=false;
+                    counter++;
+                    StartCoroutine(smallWaiter());
+                }
+
+                if(readyToStart&& counter==6)
+                {
+                   
+                    PhotonNetwork.Instantiate(MinionBrownPrefab2.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,0);
+                    readyToStart=false;
+                    counter++;
+                    StartCoroutine(smallWaiter());
+                }
+         
+                if(readyToStart&& counter==7)
+                {
+                    
+                   PhotonNetwork.Instantiate(MinionGrayPrefab2.name, SpawnGrayMinion.transform.position, SpawnGrayMinion.transform.rotation,0);
+                   readyToStart=false;
+                    counter++;
+                    StartCoroutine(smallWaiter());
+                }
+                if(readyToStart && counter==8)
+                {
+                    PhotonNetwork.Instantiate(MinionBrownPrefab1.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,0);
+                    readyToStart=false;
+                    counter++;
+                    StartCoroutine(smallWaiter());
+                }
+                   
+                if(readyToStart&& counter==9)
+                {
+                    PhotonNetwork.Instantiate(MinionGrayPrefab1.name, SpawnGrayMinion.transform.position, SpawnGrayMinion.transform.rotation,0);
+                    readyToStart=false;
+                    counter++;
+                    StartCoroutine(smallWaiter());
+                }
+
+                if(readyToStart&& counter==10)
+                {
+                   
+                    PhotonNetwork.Instantiate(MinionBrownPrefab2.name, SpawnBrownMinion.transform.position, SpawnBrownMinion.transform.rotation,0);
+                    readyToStart=false;
+                    counter++;
+                    StartCoroutine(smallWaiter());
+                }
+         
+                if(readyToStart&& counter==11)
+                {
+                    
+                   PhotonNetwork.Instantiate(MinionGrayPrefab2.name, SpawnGrayMinion.transform.position, SpawnGrayMinion.transform.rotation,0);
+                   TimeToSpawn=false;
+                   StartCoroutine(waiter());
+                }
                 
-            }
         }
         
 
 
     }
 
+
+    IEnumerator smallWaiter()
+    {
+        yield return new WaitForSeconds(InitialRespawnDelay);
+        readyToStart=true;
+
+    }
     IEnumerator waiter()
     {
         yield return new WaitForSeconds(waitTimeForMinion);
         TimeToSpawn=true;
+        counter=0;
 
     }
     void Update()

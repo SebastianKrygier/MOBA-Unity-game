@@ -7,6 +7,7 @@ using Photon.Realtime;
 public class Stats : MonoBehaviourPunCallbacks, IDemagable
 {
     public GameObject champion;
+    public GameObject RespawnController;
 
     public PhotonView pv;
 
@@ -18,6 +19,7 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
     public bool isHeroAlive=true;
     public string Team;
     private int temp;
+
 
     private HeroCombat heroCombatScript;
 
@@ -43,11 +45,15 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
         
     }
 
+    
+
     public void TakeDemage(float Demage)
     {
         
         pv.RPC("RPC_TakeDemage", RpcTarget.All, Demage);
     }
+
+    
 
     [PunRPC]
     void RPC_TakeDemage(float Demage)
@@ -62,6 +68,7 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
         {
             if(pv.IsMine)
             {
+                RespawnController.GetComponent<IRespawn>()?.Respawn();
                 isHeroAlive=false;
                 //heroCombatScript.targetedEnemy = null;
                 //heroCombatScript.performMeleeAttack = false;
