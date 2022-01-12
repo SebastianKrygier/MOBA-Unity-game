@@ -99,8 +99,14 @@ public class HeroCombat : MonoBehaviour
             //if (targetedEnemy.GetComponent<Targetable>().enemyType == Targetable.EnemyType.Minion)
             //{
             //anim.SetBool("isAttacking", true);
+
+            if (targetedEnemy.GetComponent<Stats>().health - statsScript.attackDamage <= 0)
+            {
+                statsScript.Xp += targetedEnemy.GetComponent<Stats>().giveXp;
+                statsScript.Gold += targetedEnemy.GetComponent<Stats>().giveGold;
+            }
+
             targetedEnemy.GetComponent<IDemagable>()?.TakeDemage(statsScript.attackDamage);
-            
             //}
         }
 

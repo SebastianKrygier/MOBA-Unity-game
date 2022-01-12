@@ -60,6 +60,7 @@ public class PlayerMove : MonoBehaviourPun
         if(pv.IsMine){
             if (Input.GetMouseButtonDown(1) || clickFlag)
             {
+
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, WhatCanBeClicked))
                 {
 
@@ -93,8 +94,7 @@ public class PlayerMove : MonoBehaviourPun
                     */
                 if(clickFlag)
                 {
-                    clickFlag=false;
-                    
+                    clickFlag =false;
                 }
                 else
                 {

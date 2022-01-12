@@ -11,6 +11,13 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
 
     public PhotonView pv;
 
+    public int level = 1;
+    public int Gold = 0;
+    public int Mana = 100;
+    public int Xp = 0;
+    public int giveXp;
+    public int giveGold;
+
     public float maxHealth;
     public float health;
     public float attackDamage;
@@ -18,8 +25,7 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
     public float attackTime;
     public bool isHeroAlive=true;
     public string Team;
-    private int temp;
-
+    private int temp; 
 
     private HeroCombat heroCombatScript;
 
@@ -42,7 +48,16 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
     // Update is called once per frame
     void Update()
     {
-        
+        if (Xp >= 100)
+        {
+            int restOfXp = Xp - 100;
+            Xp = restOfXp;
+
+            level++;
+            attackDamage += 10;
+            attackSpeed = (attackSpeed * 9 / 10);
+            Mana = 100;
+        }
     }
 
     

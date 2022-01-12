@@ -1682,6 +1682,7 @@ GameObject:
   - component: {fileID: -2297319297393812859}
   - component: {fileID: 5039749440965779567}
   - component: {fileID: 6606295694312368424}
+  - component: {fileID: -5509718075550241287}
   m_Layer: 0
   m_Name: Zombie1
   m_TagString: Brown
@@ -1880,6 +1881,11 @@ MonoBehaviour:
   champion: {fileID: 4493914613880827488}
   RespawnController: {fileID: 8043701273861487086, guid: 7dd58f51fa377f340a6783c761ff5b3f, type: 3}
   pv: {fileID: -1934941238899598808}
+  Gold: 0
+  Mana: 100
+  Xp: 0
+  giveXp: 0
+  giveGold: 0
   maxHealth: 120
   health: 120
   attackDamage: 30
@@ -1900,6 +1906,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 2, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-5509718075550241287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4493914613880827488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd2b116aea707b4e9043e9e1fa44e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsScript: {fileID: 0}
+  pv: {fileID: 0}
+  hpBar: {fileID: 0}
+  manaBar: {fileID: 0}
+  xpBar: {fileID: 0}
 --- !u!1 &4710940672626480558
 GameObject:
   m_ObjectHideFlags: 0

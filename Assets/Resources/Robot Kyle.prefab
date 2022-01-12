@@ -1133,6 +1133,7 @@ GameObject:
   - component: {fileID: 4934233738354181043}
   - component: {fileID: -1908006510226440123}
   - component: {fileID: 971680698116503200}
+  - component: {fileID: 6458412152563664131}
   m_Layer: 0
   m_Name: Robot Kyle
   m_TagString: Gray
@@ -1207,7 +1208,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 15
+  m_Speed: 17
   m_Acceleration: 1000
   avoidancePriority: 50
   m_AngularSpeed: 360
@@ -1330,6 +1331,11 @@ MonoBehaviour:
   champion: {fileID: 1125480222766852840}
   RespawnController: {fileID: 8043701273861487086, guid: 7dd58f51fa377f340a6783c761ff5b3f, type: 3}
   pv: {fileID: 3099873503682405173}
+  Gold: 0
+  Mana: 100
+  Xp: 0
+  giveXp: 0
+  giveGold: 0
   maxHealth: 100
   health: 100
   attackDamage: 30
@@ -1350,6 +1356,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 2, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6458412152563664131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125480222766852840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd2b116aea707b4e9043e9e1fa44e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsScript: {fileID: 0}
+  pv: {fileID: 0}
+  hpBar: {fileID: 0}
+  manaBar: {fileID: 0}
+  xpBar: {fileID: 0}
 --- !u!1 &1125480222766852842
 GameObject:
   m_ObjectHideFlags: 0
