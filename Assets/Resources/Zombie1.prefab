@@ -1683,6 +1683,7 @@ GameObject:
   - component: {fileID: 5039749440965779567}
   - component: {fileID: 6606295694312368424}
   - component: {fileID: -5509718075550241287}
+  - component: {fileID: -2661517504963037594}
   m_Layer: 0
   m_Name: Zombie1
   m_TagString: Brown
@@ -1929,6 +1930,23 @@ MonoBehaviour:
   xpText: {fileID: 0}
   goldText: {fileID: 0}
   levelText: {fileID: 0}
+  DmgButton: {fileID: 0}
+  AsButton: {fileID: 0}
+  HpButton: {fileID: 0}
+--- !u!114 &-2661517504963037594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4493914613880827488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f46f0e8977b31484aa5471ee88a83dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 3657088502498714122, guid: 178aefa99348d4e4680e1053a8975b72, type: 3}
+  agent: {fileID: 0}
 --- !u!1 &4710940672626480558
 GameObject:
   m_ObjectHideFlags: 0

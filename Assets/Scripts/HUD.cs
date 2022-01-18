@@ -34,6 +34,11 @@ public class HUD : MonoBehaviourPun
     [SerializeField]
     private Text levelText;
 
+    public Button DmgButton;
+    public Button AsButton;
+    public Button HpButton;
+
+
     void Start()
     {
         pv = GetComponent<PhotonView>();
@@ -48,6 +53,10 @@ public class HUD : MonoBehaviourPun
         xpText = GameObject.Find("HUD/XP/Value").GetComponent<Text>();
         goldText = GameObject.Find("HUD/Shop/GoldAmmount").GetComponent<Text>();
         levelText = GameObject.Find("HUD/XP/Level/Number").GetComponent<Text>();
+
+        DmgButton = GameObject.Find("HUD/Shop/DmgButton").GetComponent<Button>();
+        AsButton = GameObject.Find("HUD/Shop/AsButton").GetComponent<Button>();
+        HpButton = GameObject.Find("HUD/Shop/HpButton").GetComponent<Button>();
 
 
         hp = statsScript.health / statsScript.maxHealth;
@@ -80,6 +89,41 @@ public class HUD : MonoBehaviourPun
             xpText.text = xp.ToString();
             goldText.text = gold.ToString();
             levelText.text = level.ToString();
+        }
+    }
+
+    public void Buy(int item)
+    {
+        if (statsScript.Gold >= 1000)
+        {
+            switch (item)
+            {
+                case 1:
+                    DmgButton.interactable = false;
+                    statsScript.attackDamage += 30;
+                    statsScript.Gold -= 1000;
+                    break;
+
+                case 2:
+                    AsButton.interactable = false;
+                    statsScript.attackSpeed = statsScript.attackSpeed * 8 / 10;
+                    statsScript.Gold -= 1000;
+                    break;
+
+                case 3:
+                    HpButton.interactable = false;
+                    statsScript.maxHealth += 30;
+                    if (statsScript.health < statsScript.maxHealth)
+                    {
+                        if (statsScript.health + 30 < statsScript.maxHealth) statsScript.health += 30;
+                        else statsScript.health = statsScript.maxHealth;
+                    }
+                    statsScript.Gold -= 1000;
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }

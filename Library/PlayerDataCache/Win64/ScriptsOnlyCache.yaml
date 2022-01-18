@@ -1,6 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Assets.Scripts.HealthBar
+    - Assets.Scripts.ObjectHealthBar
     - BrownMinionBehaviour1
     - BrownMinionBehaviour2
     - CameraMove
@@ -91,19 +93,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1460}
     - Class: 114
-      Script: {instanceID: 2448}
+      Script: {instanceID: 2452}
     - Class: 114
-      Script: {instanceID: 2458}
+      Script: {instanceID: 2462}
     - Class: 114
-      Script: {instanceID: 2572}
+      Script: {instanceID: 2576}
     - Class: 114
-      Script: {instanceID: 2748}
+      Script: {instanceID: 2752}
     - Class: 114
-      Script: {instanceID: 2954}
+      Script: {instanceID: 2958}
     - Class: 114
-      Script: {instanceID: 2964}
+      Script: {instanceID: 2968}
     - Class: 114
-      Script: {instanceID: 3054}
+      Script: {instanceID: 3060}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -166,75 +168,79 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1460}
     - Class: 114
-      Script: {instanceID: 1556}
+      Script: {instanceID: 1560}
     - Class: 114
-      Script: {instanceID: 1588}
+      Script: {instanceID: 1592}
     - Class: 114
-      Script: {instanceID: 1690}
-    - Class: 114
-      Script: {instanceID: 1718}
+      Script: {instanceID: 1694}
     - Class: 114
       Script: {instanceID: 1722}
     - Class: 114
-      Script: {instanceID: 1854}
+      Script: {instanceID: 1726}
     - Class: 114
-      Script: {instanceID: 2044}
+      Script: {instanceID: 1858}
     - Class: 114
-      Script: {instanceID: 2066}
+      Script: {instanceID: 2048}
     - Class: 114
-      Script: {instanceID: 2192}
+      Script: {instanceID: 2070}
     - Class: 114
-      Script: {instanceID: 2206}
+      Script: {instanceID: 2196}
     - Class: 114
-      Script: {instanceID: 2254}
+      Script: {instanceID: 2210}
     - Class: 114
-      Script: {instanceID: 2312}
+      Script: {instanceID: 2258}
     - Class: 114
-      Script: {instanceID: 2448}
+      Script: {instanceID: 2316}
     - Class: 114
-      Script: {instanceID: 2748}
+      Script: {instanceID: 2452}
     - Class: 114
-      Script: {instanceID: 2780}
+      Script: {instanceID: 2752}
     - Class: 114
-      Script: {instanceID: 2954}
+      Script: {instanceID: 2784}
     - Class: 114
       Script: {instanceID: 2958}
     - Class: 114
-      Script: {instanceID: 2966}
+      Script: {instanceID: 2962}
     - Class: 114
-      Script: {instanceID: 3054}
+      Script: {instanceID: 2970}
     - Class: 114
-      Script: {instanceID: 3080}
+      Script: {instanceID: 3042}
     - Class: 114
-      Script: {instanceID: 3204}
+      Script: {instanceID: 3060}
     - Class: 114
-      Script: {instanceID: 3304}
+      Script: {instanceID: 3086}
     - Class: 114
-      Script: {instanceID: 3486}
+      Script: {instanceID: 3210}
     - Class: 114
-      Script: {instanceID: 3490}
+      Script: {instanceID: 3310}
     - Class: 114
-      Script: {instanceID: 3520}
+      Script: {instanceID: 3492}
     - Class: 114
-      Script: {instanceID: 3830}
+      Script: {instanceID: 3496}
     - Class: 114
-      Script: {instanceID: 3834}
+      Script: {instanceID: 3526}
     - Class: 114
-      Script: {instanceID: 4004}
+      Script: {instanceID: 3836}
     - Class: 114
-      Script: {instanceID: 4048}
+      Script: {instanceID: 3840}
     - Class: 114
-      Script: {instanceID: 4218}
+      Script: {instanceID: 4010}
     - Class: 114
-      Script: {instanceID: 4328}
+      Script: {instanceID: 4054}
     - Class: 114
-      Script: {instanceID: 4450}
+      Script: {instanceID: 4224}
     - Class: 114
-      Script: {instanceID: 4594}
+      Script: {instanceID: 4334}
     - Class: 114
-      Script: {instanceID: 4710}
+      Script: {instanceID: 4456}
     - Class: 114
-      Script: {instanceID: 4904}
+      Script: {instanceID: 4600}
+    - Class: 114
+      Script: {instanceID: 4716}
+    - Class: 114
+      Script: {instanceID: 4910}
+    - Class: 114
+      Script: {instanceID: 29192}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -295,19 +301,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1460}
     - Class: 114
-      Script: {instanceID: 2448}
+      Script: {instanceID: 2452}
     - Class: 114
-      Script: {instanceID: 2572}
+      Script: {instanceID: 2576}
     - Class: 114
-      Script: {instanceID: 2748}
+      Script: {instanceID: 2752}
     - Class: 114
-      Script: {instanceID: 2796}
+      Script: {instanceID: 2800}
     - Class: 114
-      Script: {instanceID: 2964}
+      Script: {instanceID: 2968}
     - Class: 114
-      Script: {instanceID: 3054}
+      Script: {instanceID: 3060}
     - Class: 114
-      Script: {instanceID: 3332}
+      Script: {instanceID: 3338}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -370,55 +376,59 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1460}
     - Class: 114
-      Script: {instanceID: 1588}
+      Script: {instanceID: 1592}
     - Class: 114
-      Script: {instanceID: 1854}
+      Script: {instanceID: 1858}
     - Class: 114
-      Script: {instanceID: 2044}
+      Script: {instanceID: 2048}
     - Class: 114
-      Script: {instanceID: 2066}
+      Script: {instanceID: 2070}
     - Class: 114
-      Script: {instanceID: 2312}
+      Script: {instanceID: 2316}
     - Class: 114
-      Script: {instanceID: 2448}
+      Script: {instanceID: 2452}
     - Class: 114
-      Script: {instanceID: 2572}
+      Script: {instanceID: 2576}
     - Class: 114
-      Script: {instanceID: 2748}
+      Script: {instanceID: 2752}
     - Class: 114
-      Script: {instanceID: 2780}
-    - Class: 114
-      Script: {instanceID: 2954}
+      Script: {instanceID: 2784}
     - Class: 114
       Script: {instanceID: 2958}
     - Class: 114
-      Script: {instanceID: 2964}
+      Script: {instanceID: 2962}
     - Class: 114
-      Script: {instanceID: 2966}
+      Script: {instanceID: 2968}
     - Class: 114
-      Script: {instanceID: 3054}
+      Script: {instanceID: 2970}
+    - Class: 114
+      Script: {instanceID: 3042}
     - Class: 114
       Script: {instanceID: 3060}
     - Class: 114
-      Script: {instanceID: 3080}
+      Script: {instanceID: 3066}
     - Class: 114
-      Script: {instanceID: 3204}
+      Script: {instanceID: 3086}
     - Class: 114
-      Script: {instanceID: 3304}
+      Script: {instanceID: 3210}
     - Class: 114
-      Script: {instanceID: 3486}
+      Script: {instanceID: 3310}
     - Class: 114
-      Script: {instanceID: 3490}
+      Script: {instanceID: 3492}
     - Class: 114
-      Script: {instanceID: 3964}
+      Script: {instanceID: 3496}
     - Class: 114
-      Script: {instanceID: 4218}
+      Script: {instanceID: 3970}
     - Class: 114
-      Script: {instanceID: 4328}
+      Script: {instanceID: 4224}
     - Class: 114
-      Script: {instanceID: 4450}
+      Script: {instanceID: 4334}
     - Class: 114
-      Script: {instanceID: 4710}
+      Script: {instanceID: 4456}
+    - Class: 114
+      Script: {instanceID: 4716}
+    - Class: 114
+      Script: {instanceID: 29192}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -664,7 +674,7 @@ ScriptsOnlyBuild:
     className: CurrentRoomIsVisibleProperty
   - hash:
       serializedVersion: 2
-      Hash: 6039f2457fe48c2e75c1b732404140f4
+      Hash: 20ee709d3d83f64ad2eaf2507675eb37
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HUD
@@ -1106,6 +1116,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.PunBasics
     className: PlayerNameInputField
+  - hash:
+      serializedVersion: 2
+      Hash: 4173bbea1ee3078c574e6f1889eba2c5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Assets.Scripts
+    className: HealthBar
   - hash:
       serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
@@ -1898,10 +1914,16 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit.Forms
     className: UserIdUiForm
+  - hash:
+      serializedVersion: 2
+      Hash: db59d1ae1aa05f1bae0f2d9629ac1494
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Assets.Scripts
+    className: ObjectHealthBar
   platform: 19
   scenePathNames:
   - Assets/Scenes/loading.unity
   - Assets/Scenes/lobby.unity
   - Assets/Scenes/DelayStartWaitingRoom.unity
   - Assets/Scenes/project.unity
-  playerPath: C:/Users/Tomek/Desktop/GitHub/MOBA.exe
+  playerPath: D:/UnityProjects/MOBA-Unity-game/MOBA.exe

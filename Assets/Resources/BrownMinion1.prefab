@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 7890004021501008566}
   - component: {fileID: 7890004021501008520}
   - component: {fileID: 222360623124435604}
+  - component: {fileID: -8879523503335168268}
   m_Layer: 0
   m_Name: BrownMinion1
   m_TagString: Brown
@@ -426,6 +427,20 @@ MonoBehaviour:
   attackTime: 1
   isHeroAlive: 1
   Team: Brown
+--- !u!114 &-8879523503335168268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7890004021501008565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 038bdb084feaa894fb581c4e4e2cec57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 3657088502498714122, guid: 178aefa99348d4e4680e1053a8975b72, type: 3}
+  sphere: {fileID: 0}
 --- !u!1 &7890004021646432621
 GameObject:
   m_ObjectHideFlags: 0

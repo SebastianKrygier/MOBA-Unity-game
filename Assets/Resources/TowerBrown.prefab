@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: -8646392316727037873}
   - component: {fileID: -619166583159647476}
   - component: {fileID: 3150337497983235237}
+  - component: {fileID: 5949637267905094220}
   m_Layer: 0
   m_Name: TowerBrown
   m_TagString: Brown
@@ -399,6 +400,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5949637267905094220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 038bdb084feaa894fb581c4e4e2cec57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 3657088502498714122, guid: 178aefa99348d4e4680e1053a8975b72, type: 3}
+  agent: {fileID: 0}
 --- !u!1 &171538
 GameObject:
   m_ObjectHideFlags: 0
