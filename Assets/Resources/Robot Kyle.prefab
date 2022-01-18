@@ -1331,6 +1331,7 @@ MonoBehaviour:
   champion: {fileID: 1125480222766852840}
   RespawnController: {fileID: 8043701273861487086, guid: 7dd58f51fa377f340a6783c761ff5b3f, type: 3}
   pv: {fileID: 3099873503682405173}
+  level: 1
   Gold: 0
   Mana: 100
   Xp: 0
@@ -1373,6 +1374,11 @@ MonoBehaviour:
   hpBar: {fileID: 0}
   manaBar: {fileID: 0}
   xpBar: {fileID: 0}
+  hpText: {fileID: 0}
+  manaText: {fileID: 0}
+  xpText: {fileID: 0}
+  goldText: {fileID: 0}
+  levelText: {fileID: 0}
 --- !u!1 &1125480222766852842
 GameObject:
   m_ObjectHideFlags: 0

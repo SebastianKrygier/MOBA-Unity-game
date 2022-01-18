@@ -136,9 +136,13 @@ GameObject:
   - component: {fileID: 2906577745822189586}
   - component: {fileID: 1113879493705925928}
   - component: {fileID: 483231951326583124}
-  - component: {fileID: 2935320592293191480}
   - component: {fileID: 6303712795262196298}
   - component: {fileID: -7424660173436830767}
+  - component: {fileID: -4220386385949139627}
+  - component: {fileID: 281044957812425505}
+  - component: {fileID: -3244999137584872084}
+  - component: {fileID: -5927685276675134588}
+  - component: {fileID: 4830499055221117297}
   m_Layer: 0
   m_Name: GrayMinion1
   m_TagString: Gray
@@ -264,28 +268,6 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0
---- !u!114 &2935320592293191480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5353663015711199630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d745da745b521fd42a4673328f0a3550, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  champion: {fileID: 5353663015711199630}
-  RespawnController: {fileID: 0}
-  pv: {fileID: 2906577745822189586}
-  maxHealth: 120
-  health: 120
-  attackDamage: 5
-  attackSpeed: 1
-  attackTime: 1
-  isHeroAlive: 1
-  Team: Gray
 --- !u!65 &6303712795262196298
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -293,12 +275,12 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5353663015711199630}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ae11a26ad4cbcf3498279af276fa9a93, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1.15, y: 1, z: 1.55}
-  m_Center: {x: 0, y: 0.57, z: 0}
+  m_Size: {x: 1.15, y: 2, z: 1.55}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &-7424660173436830767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,11 +293,107 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 338a89fc8faa4af4ab5c4d0ba9f0554a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destinationIsSet: 0
   agent: {fileID: 1536392666649608892}
+  animator: {fileID: 5411109844104988300}
   GrayLineDst: {fileID: 7525636477543669155, guid: af4ccae7cd4999f4e9b23f9d30453116, type: 3}
   BrownLineDst: {fileID: 6542213384565665451, guid: bde761b767cced441a1362d82e1661cb, type: 3}
   GrayBase: {fileID: 2905153638751245754, guid: c02b9e1e62b116642a77f9b6d187c38d, type: 3}
   BrownBase: {fileID: 6837087026148147339, guid: 838de2b0e5035634d91afa28172f053e, type: 3}
+--- !u!114 &-4220386385949139627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353663015711199630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c5c22492c13534cbbc98f7aafa6aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemysInRange: []
+  Sphere: {fileID: -3244999137584872084}
+  behaviour: {fileID: -7424660173436830767}
+  combat: {fileID: 281044957812425505}
+  Minion: {fileID: 5353663015711199630}
+--- !u!114 &281044957812425505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353663015711199630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac54537b2f0d39499b12ad0289c902f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroAttackType: 0
+  targetedEnemy: {fileID: 0}
+  attackRange: 15
+  rotateSpeedForAttack: 0
+  agent: {fileID: 1536392666649608892}
+  targetting: {fileID: -4220386385949139627}
+  basicAtkIdle: 0
+  performMeleeAttack: 1
+  distance: 0
+--- !u!135 &-3244999137584872084
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353663015711199630}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &-5927685276675134588
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353663015711199630}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4830499055221117297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353663015711199630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afe615053922924ab334f53b845ca04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  champion: {fileID: 5353663015711199630}
+  pv: {fileID: 2906577745822189586}
+  level: 1
+  Gold: 0
+  Mana: 100
+  Xp: 0
+  giveXp: 0
+  giveGold: 0
+  maxHealth: 60
+  health: 60
+  attackDamage: 10
+  attackSpeed: 1
+  attackTime: 1
+  isHeroAlive: 1
+  Team: Gray
 --- !u!1 &5353723341746742200
 GameObject:
   m_ObjectHideFlags: 0

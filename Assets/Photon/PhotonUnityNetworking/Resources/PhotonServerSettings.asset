@@ -41,6 +41,7 @@ MonoBehaviour:
   - RespawnSpaceship
   - RPC_SendTimer
   - RPC_TakeDemage
+  - RPC_TargetDead
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 0

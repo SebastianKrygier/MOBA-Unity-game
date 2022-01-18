@@ -1731,7 +1731,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 8f7380da49034cd488ddff94b1ac35d1, type: 3}
   m_Controller: {fileID: 9100000, guid: 2ef8e6599b7f9934e8ff0d64c5325a1f, type: 2}
   m_CullingMode: 1
-  m_UpdateMode: 1
+  m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -1881,6 +1881,7 @@ MonoBehaviour:
   champion: {fileID: 4493914613880827488}
   RespawnController: {fileID: 8043701273861487086, guid: 7dd58f51fa377f340a6783c761ff5b3f, type: 3}
   pv: {fileID: -1934941238899598808}
+  level: 1
   Gold: 0
   Mana: 100
   Xp: 0
@@ -1923,6 +1924,11 @@ MonoBehaviour:
   hpBar: {fileID: 0}
   manaBar: {fileID: 0}
   xpBar: {fileID: 0}
+  hpText: {fileID: 0}
+  manaText: {fileID: 0}
+  xpText: {fileID: 0}
+  goldText: {fileID: 0}
+  levelText: {fileID: 0}
 --- !u!1 &4710940672626480558
 GameObject:
   m_ObjectHideFlags: 0

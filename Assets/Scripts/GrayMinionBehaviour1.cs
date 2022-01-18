@@ -4,17 +4,17 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEngine.AI;
 
-public class GrayMinionBehaviour1 : MonoBehaviour
+public class GrayMinionBehaviour1 : MinionBehaviour
 {
-    public NavMeshAgent agent;
+    //public NavMeshAgent agent;
     public GameObject GrayLineDst;
     public GameObject BrownLineDst;
     public GameObject GrayBase;
     public GameObject BrownBase;
-    Animator animator;
+    //Animator animator;
 
     private bool fisrtDestinationIsReached=false;
-    private bool destinationIsSet=false;
+    
 
     
 
@@ -23,6 +23,7 @@ public class GrayMinionBehaviour1 : MonoBehaviour
     {
        agent = GetComponent<NavMeshAgent> ();
        animator = GetComponent<Animator>();
+       agent.autoRepath=true;
     }
 
     private void OnNetworkInstantiate() {
@@ -44,17 +45,20 @@ public class GrayMinionBehaviour1 : MonoBehaviour
             if(!fisrtDestinationIsReached)
             {
                 agent.SetDestination(GrayLineDst.transform.position);
+                agent.isStopped=false;
+                animator.SetBool("isWalking", true);
                 destinationIsSet=true;
             }
             else 
             {
-                agent.Resume();
                 agent.SetDestination(BrownBase.transform.position);
+                agent.isStopped=false;
+                animator.SetBool("isWalking", true);
                 destinationIsSet=true;
             }
 
         }
-        else if( agent.remainingDistance < 2)
+        else if( agent.remainingDistance < 14)
             {
                 agent.Stop();
                 animator.SetBool("isWalking", false);

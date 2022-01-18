@@ -21,6 +21,7 @@ public class HeroCombat : MonoBehaviour
     public float attackRange = 100;
     public float rotateSpeedForAttack;
     public NavMeshAgent agent;
+    private PhotonView TargetedPv;
     
 
     private PlayerMove moveScript;
@@ -74,6 +75,17 @@ public class HeroCombat : MonoBehaviour
         }
     }
 
+    [PunRPC]
+    void RPC_TargetDead(PhotonView pv)
+    {
+        if(pv!=targetedEnemy.GetComponent<PhotonView>())
+        {
+            return;
+        }
+        Debug.Log("Targeted enemy dead");
+        targetedEnemy=null;
+    }
+
     IEnumerator MeleeAttackInterval()
     {
         performMeleeAttack = false;
@@ -99,16 +111,30 @@ public class HeroCombat : MonoBehaviour
             //if (targetedEnemy.GetComponent<Targetable>().enemyType == Targetable.EnemyType.Minion)
             //{
             //anim.SetBool("isAttacking", true);
-
-            if (targetedEnemy.GetComponent<Stats>().health - statsScript.attackDamage <= 0)
+            /*if(targetedEnemy.GetComponent<ObjectStats>()!= null)
             {
-                statsScript.Xp += targetedEnemy.GetComponent<Stats>().giveXp;
-                statsScript.Gold += targetedEnemy.GetComponent<Stats>().giveGold;
+                if (targetedEnemy.GetComponent<ObjectStats>().health - statsScript.attackDamage <= 0)
+                {
+                    statsScript.Xp += targetedEnemy.GetComponent<Stats>().giveXp;
+                    statsScript.Gold += targetedEnemy.GetComponent<Stats>().giveGold;
+                }
             }
+            else if(targetedEnemy.GetComponent<Stats>()!= null)
+            {
+                if (targetedEnemy.GetComponent<Stats>().health - statsScript.attackDamage <= 0)
+                {
+                    statsScript.Xp += targetedEnemy.GetComponent<Stats>().giveXp;
+                    statsScript.Gold += targetedEnemy.GetComponent<Stats>().giveGold;
+                }
+
+            }*/
+            TargetedPv=targetedEnemy.GetComponent<PhotonView>();
 
             targetedEnemy.GetComponent<IDemagable>()?.TakeDemage(statsScript.attackDamage);
+            Debug.Log("Hero attack start");
             //}
         }
+
 
         performMeleeAttack = true;
         //anim.SetBool("isAttacking", false);

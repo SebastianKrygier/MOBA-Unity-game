@@ -22,7 +22,7 @@ public class RespawnController : MonoBehaviour, IRespawn
     private float InitialRespawnDelay;
     public void Respawn()
     {
-        Debug.Log("Respawn Starts");
+        /*Debug.Log("Respawn Starts");
         RespawnDelay=InitialRespawnDelay;
         while(readyToStart)
         {
@@ -31,9 +31,9 @@ public class RespawnController : MonoBehaviour, IRespawn
             {
                 readyToStart=true;
             }
-        }
+        }*/
         
-        InitialRespawnDelay+=10;
+        //InitialRespawnDelay+=10;
         Debug.Log(PhotonNetwork.NickName + "Players Nick");
         
             if (PhotonNetwork.NickName == "1")

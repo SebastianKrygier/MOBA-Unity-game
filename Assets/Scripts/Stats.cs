@@ -66,6 +66,7 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
     {
         
         pv.RPC("RPC_TakeDemage", RpcTarget.All, Demage);
+        Debug.Log("Hero attack take dmg sent");
     }
 
     

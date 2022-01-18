@@ -4,17 +4,17 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEngine.AI;
 
-public class BrownMinionBehaviour1 : MonoBehaviour
+public class BrownMinionBehaviour1 : MinionBehaviour
 {
-    public NavMeshAgent agent;
+    //public NavMeshAgent agent;
     public GameObject GrayLineDst;
     public GameObject BrownLineDst;
     public GameObject GrayBase;
     public GameObject BrownBase;
-    Animator animator;
+    //Animator animator;
 
     private bool fisrtDestinationIsReached=false;
-    private bool destinationIsSet=false;
+    
 
     
 
@@ -23,6 +23,7 @@ public class BrownMinionBehaviour1 : MonoBehaviour
     {
        agent = GetComponent<NavMeshAgent> ();
        animator = GetComponent<Animator>();
+       agent.autoRepath=true;
     }
 
     private void OnNetworkInstantiate() {
@@ -44,19 +45,23 @@ public class BrownMinionBehaviour1 : MonoBehaviour
             if(!fisrtDestinationIsReached)
             {
                 agent.SetDestination(GrayLineDst.transform.position);
+                agent.isStopped=false;
+                animator.SetBool("isWalking", true);
                 destinationIsSet=true;
             }
             else 
             {
-                agent.Resume();
+                
                 agent.SetDestination(GrayBase.transform.position);
+                agent.isStopped=false;
+                animator.SetBool("isWalking", true);
                 destinationIsSet=true;
             }
 
         }
-        else if( agent.remainingDistance < 2)
+        else if( agent.remainingDistance < 14)
             {
-                agent.Stop();
+                agent.isStopped=true;
                 animator.SetBool("isWalking", false);
                 fisrtDestinationIsReached=true;
                 destinationIsSet=false;
@@ -66,23 +71,8 @@ public class BrownMinionBehaviour1 : MonoBehaviour
         
     }
 
-    Transform GetClosestEnemy (List<Transform> enemies, Transform fromThis)
-         {
-             Transform bestTarget = null;
-             float closestDistanceSqr = Mathf.Infinity;
-             Vector3 currentPosition = fromThis.position;
-             foreach(Transform potentialTarget in enemies)
-             {
-                 Vector3 directionToTarget = potentialTarget.position - currentPosition;
-                 float dSqrToTarget = directionToTarget.sqrMagnitude;
-                 if(dSqrToTarget < closestDistanceSqr)
-                 {
-                     closestDistanceSqr = dSqrToTarget;
-                     bestTarget = potentialTarget;
-                 }
-             }             
-             return bestTarget;
-         }
+    
+
 
          
 }

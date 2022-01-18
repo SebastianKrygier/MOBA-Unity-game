@@ -72,6 +72,7 @@ public class PlayerMove : MonoBehaviourPun
                         
                             agent.Resume();
                             agent.SetDestination(hit.point);
+                            myHero.GetComponent<HeroCombat>().targetedEnemy = null;
                         
                         //Quaternion rotationToLookAt = Quaternion.LookRotation(hit.transform.position - transform.position);
                         //float rotationY = Mathf.SmoothDampAngle(transform.eulerAngles.y, rotationToLookAt.eulerAngles.y, ref rotateVelocity, rotateSpeedMovement * (Time.deltaTime * 5));
