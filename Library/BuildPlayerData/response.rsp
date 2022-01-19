@@ -9,6 +9,7 @@
 -a="C:\Users\Tomek\Desktop\MOBA\Library\PlayerScriptAssemblies\PhotonRealtime.dll"
 -a="C:\Users\Tomek\Desktop\MOBA\Library\PlayerScriptAssemblies\UnityEngine.UI.dll"
 -a="C:\Users\Tomek\Desktop\MOBA\Library\PlayerScriptAssemblies\PhotonUnityNetworking.Utilities.dll"
+-a="C:\Users\Tomek\Desktop\MOBA\Library\PlayerScriptAssemblies\Unity.Postprocessing.Runtime.dll"
 -a="C:\Users\Tomek\Desktop\MOBA\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\AOT\Newtonsoft.Json.dll"
 -a="C:\Users\Tomek\Desktop\MOBA\Assets\Plugins\Photon3Unity3D.dll"
 -a="C:\Users\Tomek\Desktop\MOBA\Assets\Plugins\WebSocket\websocket-sharp.dll"

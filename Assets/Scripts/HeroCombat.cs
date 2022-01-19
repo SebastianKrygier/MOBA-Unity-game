@@ -52,6 +52,7 @@ public class HeroCombat : MonoBehaviour
 
             if (Vector3.Distance(gameObject.transform.position, targetedEnemy.transform.position) > attackRange)
             {
+                anim.SetBool("isAttacking", false);
                 moveScript.agent.Resume();
                 moveScript.agent.SetDestination(targetedEnemy.transform.position);
                 moveScript.agent.stoppingDistance = attackRange;

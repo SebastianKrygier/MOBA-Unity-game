@@ -1888,9 +1888,9 @@ MonoBehaviour:
   Xp: 0
   giveXp: 0
   giveGold: 0
-  maxHealth: 120
-  health: 120
-  attackDamage: 30
+  maxHealth: 1000
+  health: 1000
+  attackDamage: 50
   attackSpeed: 1
   attackTime: 1
   isHeroAlive: 1

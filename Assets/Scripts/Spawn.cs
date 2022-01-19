@@ -6,6 +6,8 @@ using Photon.Pun;
 public class Spawn : MonoBehaviour
 {
     int PlayersNumber=PhotonNetwork.PlayerList.Length;
+    public GameObject BrownBase;
+    public GameObject GrayBase;
     public GameObject SpawnBrown;
     public GameObject SpawnGray;
     public GameObject SpawnBrownMinion;
@@ -27,6 +29,8 @@ public class Spawn : MonoBehaviour
     public Vector3 offset;
     
     [SerializeField] private GameObject prefab1;
+    [SerializeField] private GameObject NexusPrefab1;
+    [SerializeField] private GameObject NexusPrefab2;
     [SerializeField] private GameObject RespawnPrefab;
     [SerializeField] private GameObject prefab2;
     [SerializeField] private GameObject MinionGrayPrefab1;
@@ -78,6 +82,11 @@ public class Spawn : MonoBehaviour
         player=PhotonNetwork.Instantiate(RespawnPrefab.name, SpawnGray.transform.position, SpawnGray.transform.rotation,0);
         PlayerRespawn=player.GetComponent<RespawnController>();
         PlayerRespawn.Respawn();
+        if(PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.Instantiate(NexusPrefab1.name, GrayBase.transform.position, GrayBase.transform.rotation,0);
+            PhotonNetwork.Instantiate(NexusPrefab2.name, BrownBase.transform.position, BrownBase.transform.rotation,0);
+        }
         if (PhotonNetwork.NickName == "1"||PhotonNetwork.NickName == "3"||PhotonNetwork.NickName == "5")
         {
             Camera.transform.position=SpawnBrown.transform.position+offset;
