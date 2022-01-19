@@ -11,6 +11,7 @@ public class Spawn : MonoBehaviour
     public GameObject SpawnBrownMinion;
     public GameObject SpawnGrayMinion;
     public GameObject player=null;
+    public RespawnController PlayerRespawn=null;
 
 
     [SerializeField]
@@ -49,7 +50,7 @@ public class Spawn : MonoBehaviour
         //GameObject player = PhotonNetwork.Instantiate("Robot Kyle", SpawnBrown[0].transform.position, SpawnBrown[0].transform.rotation,0);
         //player.GetComponent<PlayerMove>().enabled = true;
         //player.GetComponent<Animator>().enabled = true;
-        if (PhotonNetwork.NickName == "1")
+        /*if (PhotonNetwork.NickName == "1")
         {
             player = PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position, SpawnBrown.transform.rotation,0);
         }
@@ -73,10 +74,18 @@ public class Spawn : MonoBehaviour
         {
             player = PhotonNetwork.Instantiate(prefab2.name, SpawnGray.transform.position, SpawnGray.transform.rotation,0);
         }
-        player.GetComponent<PlayerMove>().enabled = true;
-        PhotonNetwork.Instantiate(RespawnPrefab.name, SpawnGray.transform.position, SpawnGray.transform.rotation,0);
-        Camera.transform.position=player.transform.position+offset;
-        
+        player.GetComponent<PlayerMove>().enabled = true;*/
+        player=PhotonNetwork.Instantiate(RespawnPrefab.name, SpawnGray.transform.position, SpawnGray.transform.rotation,0);
+        PlayerRespawn=player.GetComponent<RespawnController>();
+        PlayerRespawn.Respawn();
+        if (PhotonNetwork.NickName == "1"||PhotonNetwork.NickName == "3"||PhotonNetwork.NickName == "5")
+        {
+            Camera.transform.position=SpawnBrown.transform.position+offset;
+        }
+        else
+        {
+            Camera.transform.position=SpawnGray.transform.position+offset;
+        }
         
 
         

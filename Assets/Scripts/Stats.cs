@@ -85,7 +85,7 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
             if(pv.IsMine)
             {
                 RespawnController.GetComponent<IRespawn>()?.Respawn();
-                isHeroAlive=false;
+                //isHeroAlive=false;
                 //heroCombatScript.targetedEnemy = null;
                 //heroCombatScript.performMeleeAttack = false;
                 PhotonNetwork.Destroy(champion);

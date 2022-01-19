@@ -1396,7 +1396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 3657088502498714122, guid: 178aefa99348d4e4680e1053a8975b72, type: 3}
-  agent: {fileID: 0}
+  agent: {fileID: 1125480223834017911}
 --- !u!1 &1125480222766852842
 GameObject:
   m_ObjectHideFlags: 0

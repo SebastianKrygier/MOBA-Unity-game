@@ -43,13 +43,13 @@ public class CameraMove : MonoBehaviour
                     position.z -= speed * Time.deltaTime;
                 }
              }
-            if(transform.position.x<620){
+            if(transform.position.x<680){
                 if (Input.mousePosition.x >= Screen.width - size) // move right
                 {
                     position.x += speed * Time.deltaTime;
                 }
             }
-            if(transform.position.x>360){
+            if(transform.position.x>320){
                 if (Input.mousePosition.x <= size) // move left
                 {
                     position.x -= speed * Time.deltaTime;

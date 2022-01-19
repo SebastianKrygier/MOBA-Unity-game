@@ -33,12 +33,13 @@ public class RespawnController : MonoBehaviour, IRespawn
     public float attackSpeed = 1;
     private Stats statsScript;
 
-    public void OnInstantiate()
+    /*public void OnInstantiate()
 
     {
+        spawn nie jest przypisany
         statsScript = spawn.player.GetComponent<Stats>();
     }
-
+    */
 
     public void Respawn()
     {
@@ -93,18 +94,18 @@ public class RespawnController : MonoBehaviour, IRespawn
         Camera.transform.position = player.transform.position + offset;
         readyToStart = false;
 
-        spawn.player = player;
+        //spawn.player = player;
 
-        statsScript = spawn.player.GetComponent<Stats>();
+       // statsScript = spawn.player.GetComponent<Stats>();
     }
 
-    public void Update()
+    /*public void Update()
     {
-        statsScript.maxHealth = maxHealth;
-        statsScript.attackDamage = attackDamage;
-        statsScript.attackSpeed = attackSpeed;
-        statsScript.level = level;
-        statsScript.Xp = Xp;
-        statsScript.Gold = Gold;
-    }
+        //statsScript.maxHealth = maxHealth;
+        //statsScript.attackDamage = attackDamage;
+        //statsScript.attackSpeed = attackSpeed;
+        //statsScript.level = level;
+        //statsScript.Xp = Xp;
+        //statsScript.Gold = Gold;
+    }*/
 }

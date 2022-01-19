@@ -20,29 +20,31 @@ public class TowerBehaviour : Targetting
         Sphere.isTrigger = true;
     }
 
-    void Update()
-    {
-        if (combat.targetedEnemy == null)
-        {
-            if (DidFought)
-            {
-                if (EnemysInRange[0] == null)
+    void Update(){
+    
+        if(combat.targetedEnemy==null)
                 {
-                    EnemysInRange.RemoveAt(0);
-                    EnemyCounter--;
+                    if(DidFought)
+                        {
+                            if(EnemysInRange.Count>0)
+                            {
+                                if(EnemysInRange[0]==null)
+                                {
+                                    EnemysInRange.RemoveAt(0);
+                                }
+                                else{
+                                    combat.targetedEnemy=EnemysInRange[0];
+                                }
+                            }
+                            else
+                            {
+                                    DidFought=false;
+                            }   
+                    }
                 }
-
-                if (EnemysInRange.Count > 0)
-                {
-                    combat.targetedEnemy = EnemysInRange[EnemyCounter];
-                    EnemyCounter++;
-                }
-                else
-                {
-                    DidFought = false;
-                }
-            }
-        }
+        
+        
+        
     }
 
     void OnTriggerEnter(Collider collider)

@@ -52,6 +52,14 @@ MonoBehaviour:
   prefab1: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
   prefab2: {fileID: 1125480222766852840, guid: 61a60f543693f0942ae510875770c4a4, type: 3}
   InitialRespawnDelay: 430
+  spawn: {fileID: 0}
+  level: 1
+  Gold: 0
+  Mana: 100
+  Xp: 0
+  maxHealth: 100
+  attackDamage: 10
+  attackSpeed: 1
 --- !u!114 &9094228742257097858
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -69,12 +69,7 @@ public class ObjectStats : MonoBehaviourPunCallbacks, IDemagable
         pv.RPC("RPC_TakeDemage", RpcTarget.All, Demage);
     }
 
-    public void Dying()
-    {
-        pv.RPC("RPC_TargetDead", RpcTarget.All, pv.ViewID);
-
-        Debug.Log("Sending dead info");
-    }
+    
 
 
     
