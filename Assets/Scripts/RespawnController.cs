@@ -40,6 +40,30 @@ public class RespawnController : MonoBehaviour, IRespawn
         statsScript = spawn.player.GetComponent<Stats>();
     }
     */
+    public void AddMaxHealth()
+    {
+        if(Gold>100)
+        {
+            maxHealth=maxHealth+20;
+            Gold=Gold-100;
+        }
+    }
+    public void AddAttackDemage()
+    {
+        if(Gold>100)
+        {
+            attackDamage=attackDamage+10;
+            Gold=Gold-100;
+        }
+    }
+    public void AddAttackSpeed()
+    {
+        if(Gold>100)
+        {
+            attackSpeed=(attackSpeed * 9 / 10);
+            Gold=Gold-100;
+        }
+    }
 
     public void Respawn()
     {

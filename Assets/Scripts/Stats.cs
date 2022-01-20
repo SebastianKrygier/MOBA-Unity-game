@@ -53,11 +53,17 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
             int restOfXp = Xp - 100;
             Xp = restOfXp;
 
-            level++;
-            attackDamage += 10;
-            attackSpeed = (attackSpeed * 9 / 10);
-            Mana = 100;
+            RespawnController.GetComponent<RespawnController>().level++;
+            RespawnController.GetComponent<RespawnController>().attackDamage += 10;
+            RespawnController.GetComponent<RespawnController>().attackSpeed = (attackSpeed * 9 / 10);
+            RespawnController.GetComponent<RespawnController>().Mana = 100;
         }
+        maxHealth=RespawnController.GetComponent<RespawnController>().maxHealth;
+        attackDamage=RespawnController.GetComponent<RespawnController>().attackDamage;
+        attackSpeed=RespawnController.GetComponent<RespawnController>().attackSpeed;
+        level=RespawnController.GetComponent<RespawnController>().level;
+        Gold=RespawnController.GetComponent<RespawnController>().Gold;
+        Xp=RespawnController.GetComponent<RespawnController>().Xp;
     }
 
     
