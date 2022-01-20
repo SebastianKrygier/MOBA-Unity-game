@@ -56,6 +56,7 @@ public class RespawnController : MonoBehaviour, IRespawn
 
         //InitialRespawnDelay+=10;
         Debug.Log(PhotonNetwork.NickName + "Players Nick");
+        
 
         if (PhotonNetwork.NickName == "1")
         {
@@ -96,16 +97,18 @@ public class RespawnController : MonoBehaviour, IRespawn
 
         //spawn.player = player;
 
-       // statsScript = spawn.player.GetComponent<Stats>();
+       statsScript = player.GetComponent<Stats>();
+       
     }
+    
 
     /*public void Update()
     {
-        //statsScript.maxHealth = maxHealth;
-        //statsScript.attackDamage = attackDamage;
-        //statsScript.attackSpeed = attackSpeed;
-        //statsScript.level = level;
-        //statsScript.Xp = Xp;
-        //statsScript.Gold = Gold;
+        statsScript.maxHealth = maxHealth;
+        statsScript.attackDamage = attackDamage;
+        statsScript.attackSpeed = attackSpeed;
+        statsScript.level = level;
+        statsScript.Xp = Xp;
+        statsScript.Gold = Gold;
     }*/
 }

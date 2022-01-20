@@ -57,8 +57,8 @@ MonoBehaviour:
   Gold: 0
   Mana: 100
   Xp: 0
-  maxHealth: 100
-  attackDamage: 10
+  maxHealth: 1000
+  attackDamage: 50
   attackSpeed: 1
 --- !u!114 &9094228742257097858
 MonoBehaviour:

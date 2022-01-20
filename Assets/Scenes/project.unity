@@ -5801,8 +5801,9 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 3
   OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
+  observableSearch: 0
+  ObservedComponents:
+  - {fileID: 1803944327}
   sceneViewId: 12
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -5818,7 +5819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d127f440eaba10419514b420f26c248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pv: {fileID: 0}
+  pv: {fileID: 1803944326}
   whoWon: 
 --- !u!4 &1803944328
 Transform:
