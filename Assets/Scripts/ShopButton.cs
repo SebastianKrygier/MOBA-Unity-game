@@ -9,21 +9,7 @@ public class ShopButton : MonoBehaviourPun
     public PhotonView pv;
 
     public GameObject respawnCotroller;
-    /*void buyHealth()
-    {
-        respawnCotroller.Find("RespawnController");
-        respawnCotroller.GetComponent<RespawnController>().AddMaxHealth();
-    }
-    void buyDemage()
-    {
-        respawnCotroller.Find("RespawnController");
-        respawnCotroller.GetComponent<RespawnController>().AddAttackDemage();
-    }
-    void buyAS()
-    {
-        respawnCotroller.Find("RespawnController");
-        respawnCotroller.GetComponent<RespawnController>().AddAttackSpeed();
-    }*/
+   
 
 
 

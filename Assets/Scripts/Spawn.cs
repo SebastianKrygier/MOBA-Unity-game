@@ -45,6 +45,21 @@ public class Spawn : MonoBehaviour
     [SerializeField]
     private float InitialRespawnDelay;
 
+    public void buyHealth()
+    {
+        
+        PlayerRespawn.AddMaxHealth();
+    }
+    public void buyDemage()
+    {
+        
+        PlayerRespawn.AddAttackDemage();
+    }
+    public void buyAS()
+    {
+       
+       PlayerRespawn.AddAttackSpeed();
+    }
 
     // Start is called before the first frame update
     void Start()
