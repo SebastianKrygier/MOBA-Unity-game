@@ -28,6 +28,7 @@ public class EndingWindowControler : MonoBehaviour
         {
             Brown.SetActive(false);
         }
+        Debug.Log("Game ended with " + winner.whoWon + " team as a winner.");
 
     }
     void Update(){

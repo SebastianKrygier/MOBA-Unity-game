@@ -64,7 +64,7 @@ public class CreateAndJoinRooms :MonoBehaviourPunCallbacks, IInRoomCallbacks
     public override void OnJoinedRoom()
     {
         int myNumberInRoom=PhotonNetwork.PlayerList.Length;
-
+        Debug.Log("Connected to room");
         PhotonNetwork.NickName = myNumberInRoom.ToString();
         if (!PhotonNetwork.IsMasterClient)
         {

@@ -10,6 +10,8 @@ ScriptsOnlyBuild:
     - CreateAndJoinRooms
     - DelayStartController
     - EndingWindowControler
+    - ForestMinionBehaviour
+    - ForestMinionTargetting
     - GrayMinionBehaviour1
     - GrayMinionBehaviour2
     - HUD
@@ -37,7 +39,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
     PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PhotonViewInspector
     - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
@@ -50,8 +51,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -298,6 +301,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4956}
     - Class: 114
       Script: {instanceID: 5158}
+    - Class: 114
+      Script: {instanceID: 37068}
+    - Class: 114
+      Script: {instanceID: 39934}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -490,6 +497,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4928}
     - Class: 114
       Script: {instanceID: 4956}
+    - Class: 114
+      Script: {instanceID: 37068}
+    - Class: 114
+      Script: {instanceID: 39934}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1995,7 +2006,7 @@ ScriptsOnlyBuild:
     className: ThirdPersonUserControl
   - hash:
       serializedVersion: 2
-      Hash: 95c1900e4d213a78138f9ef8fe450fe5
+      Hash: 1f03ca40df7379ee6822b647bee3d132
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Spawn
@@ -2107,6 +2118,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: AmbientOcclusion
+  - hash:
+      serializedVersion: 2
+      Hash: 78f691d22c97f6e222a2fdc50dc11510
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ForestMinionTargetting
+  - hash:
+      serializedVersion: 2
+      Hash: f20e5acbf881313609af755ec114b958
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ForestMinionBehaviour
   platform: 19
   scenePathNames:
   - Assets/Scenes/loading.unity

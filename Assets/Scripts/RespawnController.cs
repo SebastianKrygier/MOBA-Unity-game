@@ -46,6 +46,8 @@ public class RespawnController : MonoBehaviour, IRespawn
         {
             maxHealth=maxHealth+20;
             Gold=Gold-100;
+            Debug.Log("Buying more helph using gold");
+            Debug.Log("Gold after transaction" + Gold);
         }
     }
     public void AddAttackDemage()
@@ -54,6 +56,8 @@ public class RespawnController : MonoBehaviour, IRespawn
         {
             attackDamage=attackDamage+10;
             Gold=Gold-100;
+            Debug.Log("Buying more attack demage using gold");
+            Debug.Log("Gold after transaction" + Gold);
         }
     }
     public void AddAttackSpeed()
@@ -62,6 +66,8 @@ public class RespawnController : MonoBehaviour, IRespawn
         {
             attackSpeed=(attackSpeed * 9 / 10);
             Gold=Gold-100;
+            Debug.Log("Buying more attack speed gold");
+            Debug.Log("Gold after transaction" + Gold);
         }
     }
 
@@ -79,7 +85,7 @@ public class RespawnController : MonoBehaviour, IRespawn
         }*/
 
         //InitialRespawnDelay+=10;
-        Debug.Log(PhotonNetwork.NickName + "Players Nick");
+        Debug.Log(PhotonNetwork.NickName + "Player is beeing respawned");
         
 
         if (PhotonNetwork.NickName == "1")

@@ -81,6 +81,7 @@ public class DelayStartController : MonoBehaviourPunCallbacks
         {
             myPhotonView.RPC("RPC_SendTimer", RpcTarget.Others, timerToStartGame);
         }
+        Debug.Log("Other player joined the room.");
     }
         [PunRPC]
         private void RPC_SendTimer(float timeIn)
@@ -96,6 +97,8 @@ public class DelayStartController : MonoBehaviourPunCallbacks
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         PlayerCountUpdate();
+        Debug.Log("Other player left the room.");
+    
     }
 
 
@@ -137,6 +140,8 @@ public class DelayStartController : MonoBehaviourPunCallbacks
     void ResetTimer()
     {
         timerToStartGame = maxWaitTime;
+        string tempTimer = string.Format("{0:00}", timerToStartGame);
+        timerToStart.text = tempTimer;
         notFullGameTimer = maxWaitTime;
         fullGameTimer = maxFullGameWaitTime;
     }
@@ -148,6 +153,7 @@ public class DelayStartController : MonoBehaviourPunCallbacks
             return;
         PhotonNetwork.CurrentRoom.IsOpen = false;
         PhotonNetwork.LoadLevel(multplayerSceneIndex);
+        Debug.Log("Game Starting with "+ PhotonNetwork.PlayerList.Length +" players.");
     }
 
     public void DelayCancel()

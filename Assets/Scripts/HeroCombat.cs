@@ -68,7 +68,7 @@ public class HeroCombat : MonoBehaviour
                 {
                     if (performMeleeAttack)
                     {
-                        Debug.Log("Attack the Minion");
+                        //Debug.Log("Attack the Minion");
                         StartCoroutine(MeleeAttackInterval());
                     }
                 }
@@ -76,16 +76,7 @@ public class HeroCombat : MonoBehaviour
         }
     }
 
-    [PunRPC]
-    void RPC_TargetDead(PhotonView pv)
-    {
-        if(pv!=targetedEnemy.GetComponent<PhotonView>())
-        {
-            return;
-        }
-        Debug.Log("Targeted enemy dead");
-        targetedEnemy=null;
-    }
+    
 
     IEnumerator MeleeAttackInterval()
     {
@@ -133,7 +124,7 @@ public class HeroCombat : MonoBehaviour
             TargetedPv=targetedEnemy.GetComponent<PhotonView>();
 
             targetedEnemy.GetComponent<IDemagable>()?.TakeDemage(statsScript.attackDamage);
-            Debug.Log("Hero attack start");
+            //Debug.Log("Hero attack start");
             //}
         }
 

@@ -8,6 +8,7 @@ public class Spawn : MonoBehaviour
     int PlayersNumber=PhotonNetwork.PlayerList.Length;
     public GameObject BrownBase;
     public GameObject GrayBase;
+    public GameObject Nest;
     public GameObject SpawnBrown;
     public GameObject SpawnGray;
     public GameObject SpawnBrownMinion;
@@ -28,6 +29,7 @@ public class Spawn : MonoBehaviour
 
     public Vector3 offset;
     
+    [SerializeField] private GameObject ForestMinion;
     [SerializeField] private GameObject prefab1;
     [SerializeField] private GameObject NexusPrefab1;
     [SerializeField] private GameObject NexusPrefab2;
@@ -101,6 +103,7 @@ public class Spawn : MonoBehaviour
         {
             PhotonNetwork.Instantiate(NexusPrefab1.name, GrayBase.transform.position, GrayBase.transform.rotation,0);
             PhotonNetwork.Instantiate(NexusPrefab2.name, BrownBase.transform.position, BrownBase.transform.rotation,0);
+            PhotonNetwork.Instantiate(ForestMinion.name, Nest.transform.position, Nest.transform.rotation,0);
         }
         if (PhotonNetwork.NickName == "1"||PhotonNetwork.NickName == "3"||PhotonNetwork.NickName == "5")
         {

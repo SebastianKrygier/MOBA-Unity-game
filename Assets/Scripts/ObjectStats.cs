@@ -82,12 +82,13 @@ public class ObjectStats : MonoBehaviourPunCallbacks, IDemagable
         {
             return;
         }
-        Debug.Log("MinionTakingDmg");
+        //Debug.Log("MinionTakingDmg");
         health -= Demage;
         if (health <= 0)
         {
             if(pv.IsMine)
             {
+                Debug.Log("Object " + champion.name +" is dead");
                 //RespawnController.GetComponent<IRespawn>()?.Respawn();
                 //Dying();
                 isHeroAlive=false;

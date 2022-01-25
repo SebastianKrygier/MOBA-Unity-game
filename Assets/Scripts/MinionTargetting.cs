@@ -34,12 +34,14 @@ public class MinionTargetting : Targetting
                                 }
                                 else{
                                     combat.targetedEnemy=EnemysInRange[0];
+                                    Debug.Log(Minion.name + " is attacking " + combat.targetedEnemy.name );
                                 }
                             }
                             else
                             {
                                 
                                     behaviour.AfterAttack();
+                                    Debug.Log("No enemy in " + Minion.name + "'s range. Getting back on track.");
                                     DidFought=false;
                             }   
                     }

@@ -34,6 +34,7 @@ public class TowerBehaviour : Targetting
                                 }
                                 else{
                                     combat.targetedEnemy=EnemysInRange[0];
+                                    Debug.Log("Tower " + Tower.name + " is attacking " + combat.targetedEnemy);
                                 }
                             }
                             else

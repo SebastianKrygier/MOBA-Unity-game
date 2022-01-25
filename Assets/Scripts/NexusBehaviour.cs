@@ -43,6 +43,7 @@ public class NexusBehaviour : MonoBehaviour, IDemagable
         {
             if(pv.IsMine)
             {
+                        Debug.Log("Nexus is dead.");
                         if(this.gameObject.tag=="Gray")
                         {
                             winnerWhoWon.BrownWon();

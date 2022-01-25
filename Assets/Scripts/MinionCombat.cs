@@ -52,7 +52,8 @@ public class MinionCombat : MonoBehaviour
 
             if (Vector3.Distance(gameObject.transform.position, targetedEnemy.transform.position) > attackRange)
             {
-                agent.Resume();
+                anim.SetBool("isAttacking", false);
+                agent.isStopped=false;
                 agent.SetDestination(targetedEnemy.transform.position);
                 agent.stoppingDistance = attackRange;
 
@@ -67,7 +68,7 @@ public class MinionCombat : MonoBehaviour
                 {
                     if (performMeleeAttack)
                     {
-                        Debug.Log("Attack the Minion");
+                        //Debug.Log("Attack the Minion");
                         StartCoroutine(MeleeAttackInterval());
                     }
                 }
@@ -78,13 +79,15 @@ public class MinionCombat : MonoBehaviour
     IEnumerator MeleeAttackInterval()
     {
         performMeleeAttack = false;
-        //anim.SetBool("isAttacking", true);
+        anim.SetBool("isAttacking", true);
         yield return new WaitForSeconds(statsScript.attackSpeed / ((100 + statsScript.attackSpeed) * 0.01f));
         MeleeAttack();
         //anim.SetBool("isAttacking", false);
 
         if (targetedEnemy == null)
         {
+            anim.SetBool("isAttacking", false);
+            anim.SetBool("isWalking", false);
             performMeleeAttack = true;
         }
         

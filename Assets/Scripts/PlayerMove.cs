@@ -68,7 +68,6 @@ public class PlayerMove : MonoBehaviourPun
                     {
                             heroCombatScript.targetedEnemy = null;
                             animator.SetBool("isAttacking", false);
-
                         
                             agent.Resume();
                             agent.SetDestination(hit.point);
@@ -96,6 +95,7 @@ public class PlayerMove : MonoBehaviourPun
                 if(clickFlag)
                 {
                     clickFlag =false;
+                    Debug.Log("Hero is walking to " + hit.point);
                 }
                 else
                 {
@@ -118,6 +118,7 @@ public class PlayerMove : MonoBehaviourPun
                         
                         //animator.SetBool("isAttacking", true);
                         //}
+                        Debug.Log("Hero is attacking " + selectedHero.name);
                     }
                     else
                     {
@@ -135,6 +136,8 @@ public class PlayerMove : MonoBehaviourPun
                         //{
                         selectedHero = hit.collider.gameObject;
                         myHero.GetComponent<HeroCombat>().targetedEnemy = selectedHero;
+                        Debug.Log("Hero is attacking " + selectedHero.name);
+
                         
                         //animator.SetBool("isAttacking", true);
                         //}

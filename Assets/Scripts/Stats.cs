@@ -72,7 +72,7 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
     {
         
         pv.RPC("RPC_TakeDemage", RpcTarget.All, Demage);
-        Debug.Log("Hero attack take dmg sent");
+        //Debug.Log("Hero attack take dmg sent");
     }
 
     
@@ -84,12 +84,13 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
         {
             return;
         }
-        Debug.Log("MinionTakingDmg");
+        //Debug.Log("MinionTakingDmg");
         health -= Demage;
         if (health <= 0)
         {
             if(pv.IsMine)
             {
+                Debug.Log("Player is dead.");
                 RespawnController.GetComponent<IRespawn>()?.Respawn();
                 //isHeroAlive=false;
                 //heroCombatScript.targetedEnemy = null;
