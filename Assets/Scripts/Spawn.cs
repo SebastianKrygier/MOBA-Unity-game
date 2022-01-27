@@ -15,6 +15,7 @@ public class Spawn : MonoBehaviour
     public GameObject SpawnGrayMinion;
     public GameObject player=null;
     public RespawnController PlayerRespawn=null;
+    public GameObject Golem;
 
 
     [SerializeField]
@@ -103,7 +104,7 @@ public class Spawn : MonoBehaviour
         {
             PhotonNetwork.Instantiate(NexusPrefab1.name, GrayBase.transform.position, GrayBase.transform.rotation,0);
             PhotonNetwork.Instantiate(NexusPrefab2.name, BrownBase.transform.position, BrownBase.transform.rotation,0);
-            PhotonNetwork.Instantiate(ForestMinion.name, Nest.transform.position, Nest.transform.rotation,0);
+            Golem=(GameObject) PhotonNetwork.Instantiate(ForestMinion.name, Nest.transform.position, Nest.transform.rotation,0);
         }
         if (PhotonNetwork.NickName == "1"||PhotonNetwork.NickName == "3"||PhotonNetwork.NickName == "5")
         {
@@ -254,8 +255,15 @@ public class Spawn : MonoBehaviour
                     
                    PhotonNetwork.Instantiate(MinionGrayPrefab2.name, SpawnGrayMinion.transform.position, SpawnGrayMinion.transform.rotation,0);
                    TimeToSpawn=false;
+                   if( Golem == null&& counter==12)
+                    {
+                        Golem=(GameObject) PhotonNetwork.Instantiate(ForestMinion.name, Nest.transform.position, Nest.transform.rotation,0);
+
+                    }
                    StartCoroutine(waiter());
                 }
+
+                
                 
         }
         

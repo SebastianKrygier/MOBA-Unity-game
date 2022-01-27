@@ -425,7 +425,7 @@ MonoBehaviour:
   giveGold: 0
   maxHealth: 65
   health: 65
-  attackDamage: 10
+  attackDamage: 4
   attackSpeed: 1
   attackTime: 1
   isHeroAlive: 1

@@ -634,8 +634,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pv: {fileID: -3701031067662618541}
-  maxHealth: 100
-  health: 100
+  maxHealth: 300
+  health: 300
   Team: Gray
 --- !u!114 &-3701031067662618541
 MonoBehaviour:

@@ -10,6 +10,11 @@ public class RespawnController : MonoBehaviour, IRespawn
     public GameObject SpawnGray;
     public GameObject player = null;
     public GameObject Camera;
+    
+
+    [SerializeField]
+    public PhotonView pv;
+     
 
     public Vector3 offset;
     bool readyToStart = false;
@@ -25,7 +30,7 @@ public class RespawnController : MonoBehaviour, IRespawn
 
     //player stasts
     public int level = 1;
-    public int Gold = 0;
+    public int Gold = 10000;
     public int Mana = 100;
     public int Xp = 0;
     public float maxHealth = 100;
@@ -90,36 +95,38 @@ public class RespawnController : MonoBehaviour, IRespawn
 
         if (PhotonNetwork.NickName == "1")
         {
-            player = PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position,
+            player = (GameObject) PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position,
                 SpawnBrown.transform.rotation, 0);
         }
         else if (PhotonNetwork.NickName == "2")
         {
-            player = PhotonNetwork.Instantiate(prefab2.name, SpawnGray.transform.position, SpawnGray.transform.rotation,
+            player = (GameObject) PhotonNetwork.Instantiate(prefab2.name, SpawnGray.transform.position, SpawnGray.transform.rotation,
                 0);
         }
         else if (PhotonNetwork.NickName == "3")
         {
-            player = PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position,
+            player = (GameObject) PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position,
                 SpawnBrown.transform.rotation, 0);
         }
         else if (PhotonNetwork.NickName == "4")
         {
-            player = PhotonNetwork.Instantiate(prefab2.name, SpawnGray.transform.position, SpawnGray.transform.rotation,
+            player = (GameObject) PhotonNetwork.Instantiate(prefab2.name, SpawnGray.transform.position, SpawnGray.transform.rotation,
                 0);
         }
         else if (PhotonNetwork.NickName == "5")
         {
-            player = PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position,
+            player = (GameObject) PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position,
                 SpawnBrown.transform.rotation, 0);
         }
         else if (PhotonNetwork.NickName == "6")
         {
-            player = PhotonNetwork.Instantiate(prefab2.name, SpawnGray.transform.position, SpawnGray.transform.rotation,
+            player = (GameObject) PhotonNetwork.Instantiate(prefab2.name, SpawnGray.transform.position, SpawnGray.transform.rotation,
                 0);
         }
-
-        player.GetComponent<PlayerMove>().enabled = true;
+        if(pv.IsMine)
+        {
+            player.GetComponent<PlayerMove>().enabled = true;
+        }
         Debug.Log("Respawn Done");
 
         Camera.transform.position = player.transform.position + offset;
@@ -132,13 +139,16 @@ public class RespawnController : MonoBehaviour, IRespawn
     }
     
 
-    /*public void Update()
+    public void Update()
     {
-        statsScript.maxHealth = maxHealth;
-        statsScript.attackDamage = attackDamage;
-        statsScript.attackSpeed = attackSpeed;
-        statsScript.level = level;
-        statsScript.Xp = Xp;
-        statsScript.Gold = Gold;
-    }*/
+        if(player!=null)
+        {
+            player.GetComponent<Stats>().maxHealth = maxHealth;
+            player.GetComponent<Stats>().attackDamage = attackDamage;
+            player.GetComponent<Stats>().attackSpeed = attackSpeed;
+            player.GetComponent<Stats>().level = level;
+            player.GetComponent<Stats>().Xp = Xp;
+            player.GetComponent<Stats>().Gold = Gold;
+        }
+    }
 }

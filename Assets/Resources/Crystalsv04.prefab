@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pv: {fileID: 4017283315797030457}
-  maxHealth: 100
-  health: 100
+  maxHealth: 300
+  health: 300
   Team: Brown
 --- !u!114 &4017283315797030457
 MonoBehaviour:

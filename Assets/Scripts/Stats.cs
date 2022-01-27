@@ -8,7 +8,7 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
 {
     public GameObject champion;
     public GameObject RespawnController;
-
+    RespawnController respawnController;
     public PhotonView pv;
 
     public int level = 1;
@@ -41,30 +41,33 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
             Team="Gray";
         }
         Debug.Log("Team:"+Team);
+        //RespawnController.Find("RespawnController(Clone)");
+        respawnController=RespawnController.GetComponent<RespawnController>();
     }
     
 
 
     // Update is called once per frame
-    void Update()
+    /*void FixedUpdate()
     {
         if (Xp >= 100)
         {
             int restOfXp = Xp - 100;
             Xp = restOfXp;
 
-            RespawnController.GetComponent<RespawnController>().level++;
-            RespawnController.GetComponent<RespawnController>().attackDamage += 10;
-            RespawnController.GetComponent<RespawnController>().attackSpeed = (attackSpeed * 9 / 10);
-            RespawnController.GetComponent<RespawnController>().Mana = 100;
+            respawnController.level++;
+            respawnController.attackDamage += 10;
+            respawnController.attackSpeed = (attackSpeed * 9 / 10);
+            respawnController.Mana = 100;
         }
-        maxHealth=RespawnController.GetComponent<RespawnController>().maxHealth;
-        attackDamage=RespawnController.GetComponent<RespawnController>().attackDamage;
-        attackSpeed=RespawnController.GetComponent<RespawnController>().attackSpeed;
-        level=RespawnController.GetComponent<RespawnController>().level;
-        Gold=RespawnController.GetComponent<RespawnController>().Gold;
-        Xp=RespawnController.GetComponent<RespawnController>().Xp;
-    }
+        health+=(respawnController.maxHealth-maxHealth);
+        maxHealth=respawnController.maxHealth;
+        attackDamage=respawnController.attackDamage;
+        attackSpeed=respawnController.attackSpeed;
+        level=respawnController.level;
+        Gold=respawnController.Gold;
+        Xp=respawnController.Xp;
+    }*/
 
     
 

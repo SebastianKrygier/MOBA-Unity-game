@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Brown
   - Gray
+  - Forest
   layers:
   - Default
   - TransparentFX

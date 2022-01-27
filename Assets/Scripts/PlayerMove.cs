@@ -120,6 +120,18 @@ public class PlayerMove : MonoBehaviourPun
                         //}
                         Debug.Log("Hero is attacking " + selectedHero.name);
                     }
+                    else if (hit.collider.tag == "Forest" )
+                    {
+
+                        //if (hit.collider.gameObject.GetComponent<Targetable>().enemyType == Targetable.EnemyType.Minion)
+                        //{
+                        selectedHero = hit.collider.gameObject;
+                        myHero.GetComponent<HeroCombat>().targetedEnemy = selectedHero;
+                        
+                        //animator.SetBool("isAttacking", true);
+                        //}
+                        Debug.Log("Hero is attacking " + selectedHero.name);
+                    }
                     else
                     {
                         selectedHero = null;
@@ -129,7 +141,7 @@ public class PlayerMove : MonoBehaviourPun
                 }
                 if(statsScript.Team =="Gray")
                 {
-                    if (hit.collider.tag == "Brown" )
+                    if (hit.collider.tag == "Brown" || hit.collider.tag == "Forest")
                     {
 
                         //if (hit.collider.gameObject.GetComponent<Targetable>().enemyType == Targetable.EnemyType.Minion)
@@ -142,6 +154,7 @@ public class PlayerMove : MonoBehaviourPun
                         //animator.SetBool("isAttacking", true);
                         //}
                     }
+                    
                     else
                     {
                         selectedHero = null;

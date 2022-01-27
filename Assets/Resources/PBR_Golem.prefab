@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 1684689720674032400}
   m_Layer: 0
   m_Name: PBR_Golem
-  m_TagString: Untagged
+  m_TagString: Forest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

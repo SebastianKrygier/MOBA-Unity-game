@@ -99,7 +99,7 @@ MonoBehaviour:
   m_MinSize: {x: 303, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 566
+  controlID: 79
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -119,8 +119,8 @@ MonoBehaviour:
     y: 0
     width: 276
     height: 733
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -159,18 +159,18 @@ MonoBehaviour:
       m_ExpandedIDs: 4204feff6604feff6a06feffee0afefffa0afeff0c0bfeff140bfeff480bfeff5ab5feff68cdfeff50d0feff74d0feff78d2fefffcd6feff08d7feff1ad7feff22d7feff4ed7feff7adcfeff86ddfeffaaddfeffaadffeff2ae4feff32e4feff40e4feff44e4feffae29ffffd229ffffd62bffff5830ffff6430ffff7630ffff7e30ffffd230ffffb23cffff2841ffff487fffff6c7fffff6881ffffe685ffffee85fffffc85ffff0086ffff2087ffff4487ffff4089ffffbe8dffffc68dffffd48dffffd88dffffc6c5ffffeac5ffffeac7ffff6cccffff78ccffff8accffff92ccffff64ecfffff4ecffff18edffff14efffff26efffff2cefffff34efffff3aefffff22fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Spawn
-        m_OriginalName: Spawn
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -50818
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 5}
       m_SearchString: 
@@ -199,8 +199,8 @@ MonoBehaviour:
     y: 0
     width: 1199
     height: 733
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 9}
   m_Panes:
   - {fileID: 8}
@@ -382,7 +382,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -561,8 +561,8 @@ MonoBehaviour:
     y: 733
     width: 1475
     height: 214
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 12}
@@ -622,21 +622,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 360}
     m_SelectedIDs: 1e4c0000
     m_LastClickedID: 19486
-    m_ExpandedIDs: 000000001c4c00001e4c0000204c0000224c0000504c00005a4c000000ca9a3b
+    m_ExpandedIDs: 000000002454000026540000285400002a540000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: project
-      m_OriginalName: project
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 19550
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
@@ -650,7 +650,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001c4c00001e4c0000204c0000224c000000ca9a3b
+    m_ExpandedIDs: 000000002454000026540000285400002a540000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

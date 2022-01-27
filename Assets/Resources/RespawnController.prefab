@@ -48,6 +48,7 @@ MonoBehaviour:
   SpawnGray: {fileID: 1724960038605291987, guid: 39c0fb8930eb84c459339277389e1390, type: 3}
   player: {fileID: 0}
   Camera: {fileID: 268309802144409114, guid: 9923db978d9a1ca43bc3996976877c70, type: 3}
+  pv: {fileID: 9094228742257097858}
   offset: {x: 0, y: 200, z: 0}
   prefab1: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
   prefab2: {fileID: 1125480222766852840, guid: 61a60f543693f0942ae510875770c4a4, type: 3}
@@ -57,8 +58,8 @@ MonoBehaviour:
   Gold: 10000
   Mana: 100
   Xp: 0
-  maxHealth: 1000
-  attackDamage: 50
+  maxHealth: 400
+  attackDamage: 30
   attackSpeed: 1
 --- !u!114 &9094228742257097858
 MonoBehaviour:

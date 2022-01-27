@@ -1278,6 +1278,7 @@ MonoBehaviour:
   attackRange: 20
   rotateSpeedForAttack: 0
   agent: {fileID: 1125480223834017911}
+  statsScript: {fileID: 2991836784223108835, guid: 7dd58f51fa377f340a6783c761ff5b3f, type: 3}
   basicAtkIdle: 0
   performMeleeAttack: 1
   distance: 0
@@ -1338,9 +1339,9 @@ MonoBehaviour:
   Xp: 0
   giveXp: 0
   giveGold: 0
-  maxHealth: 1000
-  health: 1000
-  attackDamage: 50
+  maxHealth: 400
+  health: 400
+  attackDamage: 30
   attackSpeed: 1
   attackTime: 1
   isHeroAlive: 1

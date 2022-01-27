@@ -6678,7 +6678,7 @@ PrefabInstance:
       objectReference: {fileID: 1774625739149480, guid: 38efdaadbfe1d624bbee439cb02e7661, type: 3}
     - target: {fileID: 1125751088698656171, guid: b62abc81ed844f843b62aa521abf163d, type: 3}
       propertyPath: waitTimeForMinion
-      value: 45
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1125751088698656171, guid: b62abc81ed844f843b62aa521abf163d, type: 3}
       propertyPath: MinionBrownPrefab1

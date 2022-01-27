@@ -341,9 +341,9 @@ MonoBehaviour:
   Xp: 0
   giveXp: 0
   giveGold: 0
-  maxHealth: 200
-  health: 200
-  attackDamage: 30
+  maxHealth: 300
+  health: 300
+  attackDamage: 20
   attackSpeed: 1
   attackTime: 1
   isHeroAlive: 1
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 3657088502498714122, guid: 178aefa99348d4e4680e1053a8975b72, type: 3}
-  agent: {fileID: 0}
+  sphere: {fileID: 0}
 --- !u!1 &171538
 GameObject:
   m_ObjectHideFlags: 0

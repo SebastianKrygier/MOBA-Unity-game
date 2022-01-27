@@ -34,7 +34,7 @@ public class MinionTargetting : Targetting
                                 }
                                 else{
                                     combat.targetedEnemy=EnemysInRange[0];
-                                    Debug.Log(Minion.name + " is attacking " + combat.targetedEnemy.name );
+                                    
                                 }
                             }
                             else

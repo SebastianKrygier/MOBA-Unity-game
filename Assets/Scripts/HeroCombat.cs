@@ -22,10 +22,12 @@ public class HeroCombat : MonoBehaviour
     public float rotateSpeedForAttack;
     public NavMeshAgent agent;
     private PhotonView TargetedPv;
+ 
     
 
     private PlayerMove moveScript;
-    private Stats statsScript;
+    [SerializeField]
+    private RespawnController statsScript;
     private Animator anim;
 
     public bool basicAtkIdle = false;
@@ -40,7 +42,7 @@ public class HeroCombat : MonoBehaviour
     void Start()
     {
         moveScript = GetComponent<PlayerMove>();
-        statsScript = GetComponent<Stats>();
+        
         anim = GetComponent<Animator>();
     }
 
@@ -103,16 +105,9 @@ public class HeroCombat : MonoBehaviour
             //if (targetedEnemy.GetComponent<Targetable>().enemyType == Targetable.EnemyType.Minion)
             //{
             //anim.SetBool("isAttacking", true);
-            /*
-            if(targetedEnemy.GetComponent<ObjectStats>()!= null)
-            {
-                if (targetedEnemy.GetComponent<ObjectStats>().health - statsScript.attackDamage <= 0)
-                {
-                    statsScript.Xp += targetedEnemy.GetComponent<Stats>().giveXp;
-                    statsScript.Gold += targetedEnemy.GetComponent<Stats>().giveGold;
-                }
-            }
-            else if(targetedEnemy.GetComponent<Stats>()!= null)
+            
+            
+            if(targetedEnemy.GetComponent<Stats>()!= null)
             {
                 if (targetedEnemy.GetComponent<Stats>().health - statsScript.attackDamage <= 0)
                 {
@@ -120,7 +115,7 @@ public class HeroCombat : MonoBehaviour
                     statsScript.Gold += targetedEnemy.GetComponent<Stats>().giveGold;
                 }
             }
-            */
+            
             TargetedPv=targetedEnemy.GetComponent<PhotonView>();
 
             targetedEnemy.GetComponent<IDemagable>()?.TakeDemage(statsScript.attackDamage);
