@@ -63,10 +63,10 @@ public class ObjectStats : MonoBehaviourPunCallbacks, IDemagable
 
     
 
-    public void TakeDemage(float Demage)
+    public void TakeDemage(float Demage, int pvId)
     {
         
-        pv.RPC("RPC_TakeDemage", RpcTarget.All, Demage);
+        pv.RPC("RPC_TakeDemage", RpcTarget.All, Demage, pvId);
     }
 
     
@@ -76,7 +76,7 @@ public class ObjectStats : MonoBehaviourPunCallbacks, IDemagable
     
 
     [PunRPC]
-    void RPC_TakeDemage(float Demage)
+    void RPC_TakeDemage(float Demage, int pvId)
     {
         if(!pv.IsMine)
         {

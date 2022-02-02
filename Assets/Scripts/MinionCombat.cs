@@ -23,7 +23,9 @@ public class MinionCombat : MonoBehaviour
     public NavMeshAgent agent;
     [SerializeField]
     public Targetting targetting;
-    
+
+    [SerializeField]
+    public PhotonView pv;
 
    
     private ObjectStats statsScript;
@@ -93,19 +95,7 @@ public class MinionCombat : MonoBehaviour
         
     }
 
-    [PunRPC]
-    void RPC_TargetDead(int pv)
-    {
-        if(PhotonView.Find(pv)!=targetedEnemy.GetComponent<PhotonView>())
-        {
-            return;
-        }
-        Debug.Log("Targeted enemy dead");
-        GameObject ToDelete=PhotonView.Find(pv).gameObject;
-        targetting.EnemysInRange.Remove(ToDelete);
-        targetedEnemy=null;
-    }
-
+   
     public void MeleeAttack()
     {
         if (targetedEnemy != null)
@@ -131,7 +121,7 @@ public class MinionCombat : MonoBehaviour
 
             }*/
 
-            targetedEnemy.GetComponent<IDemagable>()?.TakeDemage(statsScript.attackDamage);
+            targetedEnemy.GetComponent<IDemagable>()?.TakeDemage(statsScript.attackDamage, pv.ViewID);
             //}
         }
 

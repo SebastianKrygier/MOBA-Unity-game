@@ -27,6 +27,8 @@ public class HeroCombat : MonoBehaviour
 
     private PlayerMove moveScript;
     [SerializeField]
+    public PhotonView pv;
+    [SerializeField]
     private RespawnController statsScript;
     private Animator anim;
 
@@ -118,7 +120,7 @@ public class HeroCombat : MonoBehaviour
             
             TargetedPv=targetedEnemy.GetComponent<PhotonView>();
 
-            targetedEnemy.GetComponent<IDemagable>()?.TakeDemage(statsScript.attackDamage);
+            targetedEnemy.GetComponent<IDemagable>()?.TakeDemage(statsScript.attackDamage, pv.ViewID);
             //Debug.Log("Hero attack start");
             //}
         }

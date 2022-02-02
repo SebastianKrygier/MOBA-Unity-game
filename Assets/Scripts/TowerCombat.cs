@@ -26,6 +26,8 @@ public class TowerCombat : MonoBehaviour
     public float attackRange = 100;
     public float rotateSpeedForAttack;
     
+    [SerializeField]
+    public PhotonView pv;
     
 
    
@@ -122,7 +124,7 @@ public class TowerCombat : MonoBehaviour
             }*/
 
             //}
-            targetedEnemy.GetComponent<IDemagable>()?.TakeDemage(statsScript.attackDamage);
+            targetedEnemy.GetComponent<IDemagable>()?.TakeDemage(statsScript.attackDamage, pv.ViewID);
 
         }
 

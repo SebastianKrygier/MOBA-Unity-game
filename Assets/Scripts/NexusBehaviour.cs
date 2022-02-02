@@ -25,14 +25,14 @@ public class NexusBehaviour : MonoBehaviour, IDemagable
         winnerWhoWon= GameObject.Find("WhoWon").GetComponent<WhoWon>();
     }
 
-    public void TakeDemage(float Demage)
+    public void TakeDemage(float Demage, int pvId)
     {
         
-        pv.RPC("RPC_TakeDemage", RpcTarget.All, Demage);
+        pv.RPC("RPC_TakeDemage", RpcTarget.All, Demage,pvId);
         Debug.Log("Hero attack take dmg sent");
     }
     [PunRPC]
-    void RPC_TakeDemage(float Demage)
+    void RPC_TakeDemage(float Demage, int pvId)
     {
         if(!pv.IsMine)
         {
