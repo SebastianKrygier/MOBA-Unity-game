@@ -31,6 +31,10 @@ public class NexusBehaviour : MonoBehaviour, IDemagable
         pv.RPC("RPC_TakeDemage", RpcTarget.All, Demage,pvId);
         Debug.Log("Hero attack take dmg sent");
     }
+
+    public void GetGoldAndXp(int GetXp, int GetGold){
+		return;
+	}
     [PunRPC]
     void RPC_TakeDemage(float Demage, int pvId)
     {

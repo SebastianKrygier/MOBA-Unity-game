@@ -1333,8 +1333,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   champion: {fileID: 1125480222766852840}
   RespawnController: {fileID: 8043701273861487086, guid: 7dd58f51fa377f340a6783c761ff5b3f, type: 3}
+  respawnController: {fileID: 0}
   pv: {fileID: 3099873503682405173}
-  attackerPv: {fileID: 0}
+  attacker: {fileID: 0}
   level: 1
   Gold: 0
   Mana: 100

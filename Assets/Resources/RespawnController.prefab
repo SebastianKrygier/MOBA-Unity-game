@@ -55,9 +55,9 @@ MonoBehaviour:
   InitialRespawnDelay: 430
   spawn: {fileID: 0}
   level: 1
-  Gold: 600
+  Gold: 650
   Mana: 100
-  Xp: 0
+  Xp: 50
   maxHealth: 3000
   attackDamage: 90
   attackSpeed: 1

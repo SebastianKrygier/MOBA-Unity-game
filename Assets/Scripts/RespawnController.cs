@@ -164,7 +164,7 @@ public class RespawnController : MonoBehaviour, IRespawn
 	    	player.GetComponent<Stats>().maxHealth = maxHealth;
 		player.GetComponent<Stats>().health=player.GetComponent<Stats>().health-diff;
 	    }
-            
+            player.GetComponent<Stats>().respawnController=this;
             player.GetComponent<Stats>().attackDamage = attackDamage;
             player.GetComponent<Stats>().attackSpeed = attackSpeed;
             player.GetComponent<Stats>().level = level;

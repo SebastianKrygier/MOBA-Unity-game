@@ -418,7 +418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   champion: {fileID: 7890004021501008565}
   pv: {fileID: 7890004021501008527}
-  attackerPv: {fileID: 0}
+  attacker: {fileID: 0}
   level: 1
   Gold: 0
   Mana: 100
