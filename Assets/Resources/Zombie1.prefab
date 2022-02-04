@@ -1840,6 +1840,7 @@ MonoBehaviour:
   attackRange: 20
   rotateSpeedForAttack: 0
   agent: {fileID: 3866080305273842204}
+  pv: {fileID: -1934941238899598808}
   statsScript: {fileID: 2991836784223108835, guid: 7dd58f51fa377f340a6783c761ff5b3f, type: 3}
   basicAtkIdle: 0
   performMeleeAttack: 1
@@ -1883,15 +1884,16 @@ MonoBehaviour:
   champion: {fileID: 4493914613880827488}
   RespawnController: {fileID: 8043701273861487086, guid: 7dd58f51fa377f340a6783c761ff5b3f, type: 3}
   pv: {fileID: -1934941238899598808}
+  attackerPv: {fileID: 0}
   level: 1
   Gold: 0
   Mana: 100
   Xp: 0
-  giveXp: 0
-  giveGold: 0
-  maxHealth: 400
-  health: 400
-  attackDamage: 30
+  giveXp: 250
+  giveGold: 250
+  maxHealth: 3000
+  health: 3000
+  attackDamage: 80
   attackSpeed: 1
   attackTime: 1
   isHeroAlive: 1

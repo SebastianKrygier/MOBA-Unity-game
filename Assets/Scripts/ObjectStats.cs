@@ -10,6 +10,8 @@ public class ObjectStats : MonoBehaviourPunCallbacks, IDemagable
     //public GameObject RespawnController;
 
     public PhotonView pv;
+    public PhotonView attackerPv;
+
     
 
     public int level = 1;
@@ -67,12 +69,16 @@ public class ObjectStats : MonoBehaviourPunCallbacks, IDemagable
     {
         
         pv.RPC("RPC_TakeDemage", RpcTarget.All, Demage, pvId);
+        attackerPv=PhotonView.Find(pvId);
+        //attacker=attarckerPv.gameObject;
     }
 
     
 
 
-    
+    [PunRPC]
+    void RPC_GetGoldAndXp(int GetXp, int GetGold){
+	}
     
 
     [PunRPC]
@@ -91,6 +97,7 @@ public class ObjectStats : MonoBehaviourPunCallbacks, IDemagable
                 Debug.Log("Object " + champion.name +" is dead");
                 //RespawnController.GetComponent<IRespawn>()?.Respawn();
                 //Dying();
+                attackerPv.RPC("RPC_GetGoldAndXp", RpcTarget.All, giveXp, giveGold);
                 isHeroAlive=false;
                 //heroCombatScript.targetedEnemy = null;
                 //heroCombatScript.performMeleeAttack = false;

@@ -43,6 +43,7 @@ MonoBehaviour:
   - RPC_TakeDemage
   - RPC_TargetDead
   - RPC_Winner
+  - RPC_GetGoldAndXp
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

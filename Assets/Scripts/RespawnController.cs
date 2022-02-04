@@ -23,8 +23,8 @@ public class RespawnController : MonoBehaviour, IRespawn
     [SerializeField] private GameObject prefab2;
 
     private float RespawnDelay;
-    [SerializeField] private float InitialRespawnDelay;
-
+    [SerializeField] private float InitialRespawnDelay ;
+    private string playername;
 
     [SerializeField] private Spawn spawn;
 
@@ -33,8 +33,8 @@ public class RespawnController : MonoBehaviour, IRespawn
     public int Gold = 10000;
     public int Mana = 100;
     public int Xp = 0;
-    public float maxHealth = 100;
-    public float attackDamage = 10;
+    public float maxHealth = 3000;
+    public float attackDamage = 90;
     public float attackSpeed = 1;
     private Stats statsScript;
 
@@ -65,6 +65,10 @@ public class RespawnController : MonoBehaviour, IRespawn
             Debug.Log("Gold after transaction" + Gold);
         }
     }
+
+    
+
+
     public void AddAttackSpeed()
     {
         if(Gold>100)
@@ -78,6 +82,7 @@ public class RespawnController : MonoBehaviour, IRespawn
 
     public void Respawn()
     {
+	player=null;
         /*Debug.Log("Respawn Starts");
         RespawnDelay=InitialRespawnDelay;
         while(readyToStart)
@@ -95,33 +100,39 @@ public class RespawnController : MonoBehaviour, IRespawn
 
         if (PhotonNetwork.NickName == "1")
         {
-            player = (GameObject) PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position,
-                SpawnBrown.transform.rotation, 0);
+            playername = prefab1.name;
+            player = (PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position,
+                SpawnBrown.transform.rotation, 0) as GameObject);
         }
         else if (PhotonNetwork.NickName == "2")
         {
-            player = (GameObject) PhotonNetwork.Instantiate(prefab2.name, SpawnGray.transform.position, SpawnGray.transform.rotation,
-                0);
+	    playername = prefab2.name;
+            player = (PhotonNetwork.Instantiate(prefab2.name, SpawnGray.transform.position, SpawnGray.transform.rotation,
+                0) as GameObject);
         }
         else if (PhotonNetwork.NickName == "3")
         {
-            player = (GameObject) PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position,
-                SpawnBrown.transform.rotation, 0);
+            playername = prefab1.name;
+            player = (PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position,
+                SpawnBrown.transform.rotation, 0) as GameObject);
         }
         else if (PhotonNetwork.NickName == "4")
         {
-            player = (GameObject) PhotonNetwork.Instantiate(prefab2.name, SpawnGray.transform.position, SpawnGray.transform.rotation,
-                0);
+	    playername = prefab2.name;
+            player = (PhotonNetwork.Instantiate(prefab2.name, SpawnGray.transform.position, SpawnGray.transform.rotation,
+                0) as GameObject);
         }
         else if (PhotonNetwork.NickName == "5")
         {
-            player = (GameObject) PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position,
-                SpawnBrown.transform.rotation, 0);
+	    playername = prefab1.name;
+            player = (PhotonNetwork.Instantiate(prefab1.name, SpawnBrown.transform.position,
+                SpawnBrown.transform.rotation, 0) as GameObject);
         }
         else if (PhotonNetwork.NickName == "6")
         {
-            player = (GameObject) PhotonNetwork.Instantiate(prefab2.name, SpawnGray.transform.position, SpawnGray.transform.rotation,
-                0);
+	    playername = prefab2.name;
+            player = (PhotonNetwork.Instantiate(prefab2.name, SpawnGray.transform.position, SpawnGray.transform.rotation,
+                0) as GameObject);
         }
         if(pv.IsMine)
         {
@@ -134,6 +145,8 @@ public class RespawnController : MonoBehaviour, IRespawn
 
         //spawn.player = player;
 
+	
+
        statsScript = player.GetComponent<Stats>();
        
     }
@@ -141,14 +154,27 @@ public class RespawnController : MonoBehaviour, IRespawn
 
     public void Update()
     {
+	if(player == null){
+		player=GameObject.Find(playername + "(Clone)");
+	}
         if(player!=null)
         {
-            player.GetComponent<Stats>().maxHealth = maxHealth;
+	    if(player.GetComponent<Stats>().maxHealth!=maxHealth){
+		float diff = player.GetComponent<Stats>().maxHealth-maxHealth;
+	    	player.GetComponent<Stats>().maxHealth = maxHealth;
+		player.GetComponent<Stats>().health=player.GetComponent<Stats>().health-diff;
+	    }
+            
             player.GetComponent<Stats>().attackDamage = attackDamage;
             player.GetComponent<Stats>().attackSpeed = attackSpeed;
             player.GetComponent<Stats>().level = level;
             player.GetComponent<Stats>().Xp = Xp;
             player.GetComponent<Stats>().Gold = Gold;
         }
+    }
+
+    public void GetGoldAndXp(int GetXp, int GetGold){
+	Xp=Xp+GetXp;
+	Gold=Gold+GetGold;
     }
 }

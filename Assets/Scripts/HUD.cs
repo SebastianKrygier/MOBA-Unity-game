@@ -59,13 +59,14 @@ public class HUD : MonoBehaviourPun
         HpButton = GameObject.Find("HUD/Shop/HpButton").GetComponent<Button>();
 
 
-        hp = statsScript.health / statsScript.maxHealth;
-        mana = statsScript.Mana / 100;
-        xp = statsScript.Xp / 100;
+        hp = statsScript.health;
+        mana = statsScript.Mana;
+        xp = statsScript.Xp;
+ 	hpBar.localScale = new Vector3((float)(hp/statsScript.maxHealth), 1, 1);
+        manaBar.localScale = new Vector3((float)(mana/100), 1, 1);
+        xpBar.localScale = new Vector3((float)(xp/100), 1, 1);
 
-        hpBar.localScale = new Vector3((float)hp, 1, 1);
-        manaBar.localScale = new Vector3((float)mana, 1, 1);
-        xpBar.localScale = new Vector3((float)xp, 1, 1);
+
     }
 
     
@@ -80,7 +81,7 @@ public class HUD : MonoBehaviourPun
             gold = statsScript.Gold;
             level = statsScript.level;
 
-            hpBar.localScale = new Vector3((float)(hp/statsScript.maxHealth), 1, 1);
+            hpBar.localScale = new Vector3((float)(hp/(statsScript.maxHealth)), 1, 1);
             manaBar.localScale = new Vector3((float)(mana/100), 1, 1);
             xpBar.localScale = new Vector3((float)(xp/100), 1, 1);
 

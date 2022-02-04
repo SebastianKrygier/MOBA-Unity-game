@@ -10,6 +10,7 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
     public GameObject RespawnController;
     RespawnController respawnController;
     public PhotonView pv;
+    public PhotonView attackerPv;
 
     public int level = 1;
     public int Gold = 0;
@@ -75,10 +76,14 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
     {
         
         pv.RPC("RPC_TakeDemage", RpcTarget.All, Demage, pvId);
+	attackerPv=PhotonView.Find(pvId);
         //Debug.Log("Hero attack take dmg sent");
     }
 
-    
+    [PunRPC]
+    void RPC_GetGoldAndXp(int GetXp, int GetGold){
+		RespawnController.GetComponent<RespawnController>().GetGoldAndXp(GetXp,GetGold);
+    }
 
     [PunRPC]
     void RPC_TakeDemage(float Demage, int pvId)
@@ -94,8 +99,9 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
             if(pv.IsMine)
             {
                 Debug.Log("Player is dead.");
-                RespawnController.GetComponent<IRespawn>()?.Respawn();
+                RespawnController.GetComponent<RespawnController>().Respawn();
                 //isHeroAlive=false;
+		attackerPv.RPC("RPC_GetGoldAndXp", RpcTarget.All, giveXp, giveGold);
                 //heroCombatScript.targetedEnemy = null;
                 //heroCombatScript.performMeleeAttack = false;
                 PhotonNetwork.Destroy(champion);

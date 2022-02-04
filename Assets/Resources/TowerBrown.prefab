@@ -335,15 +335,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   champion: {fileID: 165880}
   pv: {fileID: -3307871756405057291}
+  attackerPv: {fileID: 0}
   level: 1
   Gold: 0
   Mana: 100
   Xp: 0
-  giveXp: 0
-  giveGold: 0
-  maxHealth: 300
-  health: 300
-  attackDamage: 20
+  giveXp: 250
+  giveGold: 150
+  maxHealth: 3500
+  health: 3500
+  attackDamage: 80
   attackSpeed: 1
   attackTime: 1
   isHeroAlive: 1
@@ -381,6 +382,7 @@ MonoBehaviour:
   targetedEnemy: {fileID: 0}
   attackRange: 50
   rotateSpeedForAttack: 0
+  pv: {fileID: -3307871756405057291}
   basicAtkIdle: 0
   performMeleeAttack: 1
   distance: 0
