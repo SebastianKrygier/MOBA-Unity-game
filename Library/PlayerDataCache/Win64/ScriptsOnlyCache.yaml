@@ -1116,7 +1116,7 @@ ScriptsOnlyBuild:
     className: LoaderAnime
   - hash:
       serializedVersion: 2
-      Hash: d96ccdc3846f43e1248a4498f3a73794
+      Hash: f9a8d53663356c10980664ee0ea9632e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RespawnController
@@ -1314,7 +1314,7 @@ ScriptsOnlyBuild:
     className: BezierCurve
   - hash:
       serializedVersion: 2
-      Hash: d1a7f78bddeb3d6be2d03832e43ba7c2
+      Hash: a00075a1e7c9acb699c7787fac0f199b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Stats

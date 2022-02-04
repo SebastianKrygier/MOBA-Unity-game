@@ -1340,6 +1340,7 @@ MonoBehaviour:
   Gold: 0
   Mana: 100
   Xp: 0
+  XpForLvl: 100
   giveXp: 250
   giveGold: 250
   maxHealth: 3000

@@ -28,6 +28,7 @@ public class HUD : MonoBehaviourPun
     private double xp;
     private int gold;
     private int level;
+	private int XpForLevel;
 
     [SerializeField]
     private Text goldText;
@@ -62,9 +63,11 @@ public class HUD : MonoBehaviourPun
         hp = statsScript.health;
         mana = statsScript.Mana;
         xp = statsScript.Xp;
+		XpForLevel=statsScript.XpForLvl;
+		level=statsScript.level;
  	hpBar.localScale = new Vector3((float)(hp/statsScript.maxHealth), 1, 1);
         manaBar.localScale = new Vector3((float)(mana/100), 1, 1);
-        xpBar.localScale = new Vector3((float)(xp/100), 1, 1);
+        xpBar.localScale = new Vector3((float)(xp/XpForLevel), 1, 1);
 
 
     }
@@ -83,7 +86,7 @@ public class HUD : MonoBehaviourPun
 
             hpBar.localScale = new Vector3((float)(hp/(statsScript.maxHealth)), 1, 1);
             manaBar.localScale = new Vector3((float)(mana/100), 1, 1);
-            xpBar.localScale = new Vector3((float)(xp/100), 1, 1);
+            xpBar.localScale = new Vector3((float)(xp/XpForLevel), 1, 1);
 
             hpText.text = hp.ToString();
             manaText.text = mana.ToString();

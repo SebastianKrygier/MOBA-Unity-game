@@ -109,7 +109,7 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
                 Debug.Log("Player is dead.");
                 RespawnController.GetComponent<RespawnController>().Respawn();
                 //isHeroAlive=false;
-		attacker.GetComponent<IDemagable>()?.GetGoldAndXp(giveXp, giveGold);
+				attacker.GetComponent<IDemagable>()?.GetGoldAndXp(giveXp, giveGold);
                 //heroCombatScript.targetedEnemy = null;
                 //heroCombatScript.performMeleeAttack = false;
                 PhotonNetwork.Destroy(champion);

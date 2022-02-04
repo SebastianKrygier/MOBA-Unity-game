@@ -16,6 +16,7 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
     public int Gold = 0;
     public int Mana = 100;
     public int Xp = 0;
+	public int XpForLvl=100;
     public int giveXp;
     public int giveGold;
 
