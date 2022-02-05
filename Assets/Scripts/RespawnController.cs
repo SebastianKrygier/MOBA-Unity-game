@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class RespawnController : MonoBehaviour, IRespawn
+public class RespawnController : MonoBehaviour, IRespawn, IPunObservable
 {
     int PlayersNumber = PhotonNetwork.PlayerList.Length;
     public GameObject SpawnBrown;
@@ -64,6 +64,22 @@ public class RespawnController : MonoBehaviour, IRespawn
             Gold=Gold-100;
             Debug.Log("Buying more attack demage using gold");
             Debug.Log("Gold after transaction" + Gold);
+        }
+    }
+	
+	 public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(Xp);
+			stream.SendNext(Gold);
+			stream.SendNext(Mana);
+        }
+        else
+        {
+            Xp = (int)stream.ReceiveNext();
+			Gold = (int)stream.ReceiveNext();
+			Mana = (int)stream.ReceiveNext();
         }
     }
 
@@ -160,30 +176,30 @@ public class RespawnController : MonoBehaviour, IRespawn
 	}
         if(player!=null)
         {
-		if(Xp>=XpForLvl)
-		{
-			level++;
-			maxHealth=maxHealth+100;
-			attackDamage=attackDamage+10;
-			XpForLvl=XpForLvl+150;
-			attackSpeed=(attackSpeed * 8 / 10);
-			Xp=0;
-		}
-		
-	    if(player.GetComponent<Stats>().maxHealth!=maxHealth){
-		float diff = player.GetComponent<Stats>().maxHealth-maxHealth;
-	    	player.GetComponent<Stats>().maxHealth = maxHealth;
-		player.GetComponent<Stats>().health=player.GetComponent<Stats>().health-diff;
-	    }
+			if(Xp>=XpForLvl)
+			{
+				level++;
+				maxHealth=maxHealth+100;
+				attackDamage=attackDamage+10;
+				XpForLvl=XpForLvl+150;
+				attackSpeed=(attackSpeed * 8 / 10);
+				Xp=1;
+			}
 			
-            player.GetComponent<Stats>().respawnController=this;
-            player.GetComponent<Stats>().attackDamage = attackDamage;
-            player.GetComponent<Stats>().attackSpeed = attackSpeed;
-            player.GetComponent<Stats>().level = level;
-            player.GetComponent<Stats>().Xp = Xp;
-			player.GetComponent<Stats>().XpForLvl = XpForLvl;
+			if(player.GetComponent<Stats>().maxHealth!=maxHealth){
+			float diff = player.GetComponent<Stats>().maxHealth-maxHealth;
+				player.GetComponent<Stats>().maxHealth = maxHealth;
+			player.GetComponent<Stats>().health=player.GetComponent<Stats>().health-diff;
+			}
+				
+				player.GetComponent<Stats>().respawnController=this;
+				player.GetComponent<Stats>().attackDamage = attackDamage;
+				player.GetComponent<Stats>().attackSpeed = attackSpeed;
+				player.GetComponent<Stats>().level = level;
+				player.GetComponent<Stats>().Xp = Xp;
+				player.GetComponent<Stats>().XpForLvl = XpForLvl;
 
-            player.GetComponent<Stats>().Gold = Gold;
+				player.GetComponent<Stats>().Gold = Gold;
         }
     }
 

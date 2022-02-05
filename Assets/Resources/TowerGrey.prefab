@@ -584,6 +584,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: -4716054689866282398}
+  - {fileID: 4940893490268053500}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -630,7 +631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   champion: {fileID: 2219839718691274069}
   pv: {fileID: 1891964890933495314}
-  attackerPv: {fileID: 0}
+  attacker: {fileID: 0}
   level: 1
   Gold: 0
   Mana: 100

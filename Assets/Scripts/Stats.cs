@@ -4,7 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class Stats : MonoBehaviourPunCallbacks, IDemagable
+public class Stats : MonoBehaviourPunCallbacks, IDemagable, IPunObservable
 {
     public GameObject champion;
     public GameObject RespawnController;
@@ -46,7 +46,23 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
         //RespawnController.Find("RespawnController(Clone)");
         respawnController=RespawnController.GetComponent<RespawnController>();
     }
-    
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(Xp);
+			stream.SendNext(Gold);
+			stream.SendNext(Mana);
+			stream.SendNext(health);
+        }
+        else
+        {
+            Xp = (int)stream.ReceiveNext();
+			Gold = (int)stream.ReceiveNext();
+			Mana = (int)stream.ReceiveNext();
+			health = (float)stream.ReceiveNext();
+        }
+    }
 
 
     // Update is called once per frame
@@ -77,7 +93,7 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
     {
         
         pv.RPC("RPC_TakeDemage", RpcTarget.All, Demage, pvId);
-	attacker=PhotonView.Find(pvId).gameObject;
+		attacker=PhotonView.Find(pvId).gameObject;
         //Debug.Log("Hero attack take dmg sent");
     }
 
@@ -107,10 +123,14 @@ public class Stats : MonoBehaviourPunCallbacks, IDemagable
         {
             if(pv.IsMine)
             {
+				attacker=PhotonView.Find(pvId).gameObject;
+
                 Debug.Log("Player is dead.");
                 RespawnController.GetComponent<RespawnController>().Respawn();
                 //isHeroAlive=false;
-				attacker.GetComponent<IDemagable>()?.GetGoldAndXp(giveXp, giveGold);
+				if(attacker!=null){
+					attacker.GetComponent<IDemagable>().GetGoldAndXp(giveXp, giveGold);
+				}
                 //heroCombatScript.targetedEnemy = null;
                 //heroCombatScript.performMeleeAttack = false;
                 PhotonNetwork.Destroy(champion);

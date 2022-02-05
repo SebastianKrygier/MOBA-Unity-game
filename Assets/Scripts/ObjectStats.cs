@@ -4,7 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class ObjectStats : MonoBehaviourPunCallbacks, IDemagable
+public class ObjectStats : MonoBehaviourPunCallbacks, IDemagable, IPunObservable
 {
     public GameObject champion;
     //public GameObject RespawnController;
@@ -77,7 +77,23 @@ public class ObjectStats : MonoBehaviourPunCallbacks, IDemagable
 	return;
     }
 
-    
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(Xp);
+			stream.SendNext(Gold);
+			stream.SendNext(Mana);
+			stream.SendNext(health);
+        }
+        else
+        {
+            Xp = (int)stream.ReceiveNext();
+			Gold = (int)stream.ReceiveNext();
+			Mana = (int)stream.ReceiveNext();
+			health = (float)stream.ReceiveNext();
+        }
+    }
 
 
     [PunRPC]
@@ -99,6 +115,8 @@ public class ObjectStats : MonoBehaviourPunCallbacks, IDemagable
         {
             if(pv.IsMine)
             {
+				attacker=PhotonView.Find(pvId).gameObject;
+
                 Debug.Log("Object " + champion.name +" is dead");
                 //RespawnController.GetComponent<IRespawn>()?.Respawn();
                 //Dying();

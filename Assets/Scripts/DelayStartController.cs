@@ -125,9 +125,10 @@ public class DelayStartController : MonoBehaviourPunCallbacks
             timerToStartGame = notFullGameTimer;
 
         }
-
-        string tempTimer = string.Format("{0:00}", timerToStartGame);
-        timerToStart.text = tempTimer;
+		if(timerToStartGame>=0){
+			string tempTimer = string.Format("{0:00}", timerToStartGame);
+			timerToStart.text = tempTimer;
+		}
 
         if(timerToStartGame <= 0)
         {

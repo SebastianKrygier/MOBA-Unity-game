@@ -58,7 +58,7 @@ MonoBehaviour:
   level: 1
   Gold: 650
   Mana: 100
-  Xp: 50
+  Xp: 1
   maxHealth: 3000
   attackDamage: 90
   attackSpeed: 1
