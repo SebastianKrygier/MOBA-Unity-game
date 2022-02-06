@@ -164,6 +164,27 @@ public class PlayerMove : MonoBehaviourPun
                 }
             }
         }
+		if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (statsScript.Mana > 0)
+                {
+					
+                    agent.speed = 50;
+                    statsScript.Mana -= 10;
+					if(statsScript.Mana<0)
+					{
+						statsScript.Mana=0;
+					}
+                }
+                else
+                {
+                    agent.speed = 17;
+                }
+            }
+            if(Input.GetKeyUp(KeyCode.Q))
+            {
+                agent.speed = 1;
+            }
         }
 
         //ANIMATIONS
