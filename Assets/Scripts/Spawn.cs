@@ -255,7 +255,7 @@ public class Spawn : MonoBehaviour
                     
                    PhotonNetwork.Instantiate(MinionGrayPrefab2.name, SpawnGrayMinion.transform.position, SpawnGrayMinion.transform.rotation,0);
                    TimeToSpawn=false;
-                   if( Golem == null&& counter==12)
+                   if( Golem == null&& counter==11)
                     {
                         Golem=(GameObject) PhotonNetwork.Instantiate(ForestMinion.name, Nest.transform.position, Nest.transform.rotation,0);
 

@@ -81,6 +81,7 @@ public class HUD : MonoBehaviourPun
             hp = statsScript.health;
             mana = statsScript.Mana;
             xp = statsScript.Xp;
+			XpForLevel=statsScript.XpForLvl;
             gold = statsScript.Gold;
             level = statsScript.level;
 
